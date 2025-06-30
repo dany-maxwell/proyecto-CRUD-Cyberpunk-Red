@@ -1,0 +1,14 @@
+# Qt / C++ build files
+*.o
+*.obj
+*.exe
+*.user
+*.user.*
+*.pro.user
+build-*/
+Makefile
+*.autosave
+
+# Qt Creator config
+*.qmake.stash
+*.directory

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>imagenes/Cyberpunk-RED-logo.png</file>
+        <file>imagenes/Cyberpunk-RED-logo - Copy.jpeg</file>
+    </qresource>
+</RCC>

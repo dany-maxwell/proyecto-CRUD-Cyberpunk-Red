@@ -75,13 +75,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 69,
+				"line" : 70,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 52,
+				"line" : 53,
 				"parent" : 0
 			},
 			{
@@ -378,18 +378,19 @@
 			[
 				0,
 				1,
-				2
+				2,
+				9
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "cyberpunk-red-character-sheet-managger_autogen::@6890427a1f51a3e7e1df"
+			"id" : "cyberpunk-red-character-sheet-managger_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "cyberpunk-red-character-sheet-managger_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "cyberpunk-red-character-sheet-managger_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "cyberpunk-red-character-sheet-managger::@6890427a1f51a3e7e1df",
@@ -501,7 +502,8 @@
 			[
 				0,
 				1,
-				2
+				2,
+				9
 			]
 		},
 		{
@@ -509,7 +511,7 @@
 			"sourceIndexes" : 
 			[
 				3,
-				6
+				7
 			]
 		},
 		{
@@ -524,14 +526,22 @@
 			"sourceIndexes" : 
 			[
 				5,
-				7
+				8
+			]
+		},
+		{
+			"name" : "Resources",
+			"sourceIndexes" : 
+			[
+				6
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				8
+				10,
+				11
 			]
 		}
 	],
@@ -572,6 +582,11 @@
 			"sourceGroupIndex" : 3
 		},
 		{
+			"backtrace" : 4,
+			"path" : "imagenes.qrc",
+			"sourceGroupIndex" : 4
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/include/ui_charactersheetmanager.h",
@@ -585,9 +600,22 @@
 		},
 		{
 			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/EWIEGA46WW/qrc_imagenes.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/timestamp.rule",
-			"sourceGroupIndex" : 4
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/EWIEGA46WW/qrc_imagenes.cpp.rule",
+			"sourceGroupIndex" : 5
 		}
 	],
 	"type" : "EXECUTABLE"

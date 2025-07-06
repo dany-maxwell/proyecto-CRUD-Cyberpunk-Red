@@ -41,7 +41,7 @@ border: 4px solid red;
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>imagenes/Cyberpunk-RED-logo.png</pixmap>
+     <pixmap resource="imagenes.qrc">:/img/imagenes/Cyberpunk-RED-logo.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -81,7 +81,7 @@ font: 14pt &quot;OCR A&quot;;</string>
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="Agregar">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -91,17 +91,22 @@ font: 14pt &quot;OCR A&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #b4b4b4;
-border: 4px solid red;
-font-weight: bold;
-color: black;
-</string>
+     <string notr="true">QPushButton{
+	background-color: #b4b4b4;
+	border: 4px solid red;
+	font-weight: bold;
+	color: black;
+}
+QPushButton:hover {
+    background-color: #848686;
+	border: 4px solid #bd0000;
+}</string>
     </property>
     <property name="text">
      <string>AGREGAR</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="Editar">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -121,7 +126,7 @@ color: black;
      <string>EDITAR</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="Eliminar">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -156,7 +161,7 @@ color: black;
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="Salir">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -179,12 +184,14 @@ color: black;
    </widget>
    <zorder>frame</zorder>
    <zorder>label_2</zorder>
+   <zorder>Agregar</zorder>
+   <zorder>Editar</zorder>
+   <zorder>Eliminar</zorder>
    <zorder>logo</zorder>
-   <zorder>pushButton</zorder>
-   <zorder>pushButton_2</zorder>
-   <zorder>pushButton_3</zorder>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="imagenes.qrc"/>
+ </resources>
  <connections/>
 </ui>

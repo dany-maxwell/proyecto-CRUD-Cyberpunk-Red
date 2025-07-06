@@ -38,10 +38,14 @@ template <> constexpr inline auto CharacterSheetManager::qt_create_metaobjectdat
 {
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
-        "CharacterSheetManager"
+        "CharacterSheetManager",
+        "on_Agregar_clicked",
+        ""
     };
 
     QtMocHelpers::UintData qt_methods {
+        // Slot 'on_Agregar_clicked'
+        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -63,9 +67,12 @@ Q_CONSTINIT const QMetaObject CharacterSheetManager::staticMetaObject = { {
 void CharacterSheetManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     auto *_t = static_cast<CharacterSheetManager *>(_o);
-    (void)_t;
-    (void)_c;
-    (void)_id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: _t->on_Agregar_clicked(); break;
+        default: ;
+        }
+    }
     (void)_a;
 }
 
@@ -85,6 +92,18 @@ void *CharacterSheetManager::qt_metacast(const char *_clname)
 int CharacterSheetManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QMainWindow::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 1)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 1;
+    }
+    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 1)
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+        _id -= 1;
+    }
     return _id;
 }
 QT_WARNING_POP

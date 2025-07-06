@@ -150,7 +150,9 @@ cyberpunk-red-character-sheet-managger_autogen/timestamp: \
 	D:/Qt/6.9.1/mingw_64/include/QtGui/qtransform.h \
 	D:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs.h \
 	D:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs_win.h \
+	D:/Qt/6.9.1/mingw_64/include/QtWidgets/QDialog \
 	D:/Qt/6.9.1/mingw_64/include/QtWidgets/QMainWindow \
+	D:/Qt/6.9.1/mingw_64/include/QtWidgets/qdialog.h \
 	D:/Qt/6.9.1/mingw_64/include/QtWidgets/qmainwindow.h \
 	D:/Qt/6.9.1/mingw_64/include/QtWidgets/qsizepolicy.h \
 	D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtabwidget.h \
@@ -592,6 +594,10 @@ cyberpunk-red-character-sheet-managger_autogen/timestamp: \
 	D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/moc_predefs.h \
 	D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/charactersheetmanager.cpp \
 	D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/charactersheetmanager.h \
+	D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/imagenes.qrc \
 	D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/main.cpp \
+	D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/ventanagregar.cpp \
+	D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/ventanagregar.h \
 	D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/charactersheetmanager.ui \
+	D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/ventanagregar.ui \
 	D:/Qt/Tools/CMake_64/bin/cmake.exe

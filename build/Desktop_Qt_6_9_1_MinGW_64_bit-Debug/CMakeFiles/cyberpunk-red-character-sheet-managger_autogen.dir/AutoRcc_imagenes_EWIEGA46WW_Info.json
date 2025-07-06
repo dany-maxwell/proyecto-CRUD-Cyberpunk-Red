@@ -1,0 +1,26 @@
+{
+	"BUILD_DIR" : "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen",
+	"CMAKE_BINARY_DIR" : "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger",
+	"CMAKE_SOURCE_DIR" : "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/include",
+	"INPUTS" : 
+	[
+		"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/imagenes/Cyberpunk-RED-logo.png",
+		"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/imagenes/Cyberpunk-RED-logo - Copy.jpeg"
+	],
+	"LOCK_FILE" : "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/cyberpunk-red-character-sheet-managger_autogen.dir/AutoRcc_imagenes_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "imagenes" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_imagenes.cpp",
+	"RCC_EXECUTABLE" : "D:/Qt/6.9.1/mingw_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/cyberpunk-red-character-sheet-managger_autogen.dir/AutoRcc_imagenes_EWIEGA46WW_Used.txt",
+	"SOURCE" : "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/imagenes.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

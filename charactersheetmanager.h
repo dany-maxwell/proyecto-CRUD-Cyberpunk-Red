@@ -17,6 +17,10 @@ public:
     CharacterSheetManager(QWidget *parent = nullptr);
     ~CharacterSheetManager();
 
+private slots:
+
+    void on_Agregar_clicked();
+
 private:
     Ui::CharacterSheetManager *ui;
 };

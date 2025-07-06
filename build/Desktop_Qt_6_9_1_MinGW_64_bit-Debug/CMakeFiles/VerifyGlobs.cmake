@@ -43,9 +43,12 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/Usuarios/Maxwell/Documento
 set(OLD_GLOB
   "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp"
   "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/EWIEGA46WW/moc_charactersheetmanager.cpp"
+  "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/EWIEGA46WW/moc_ventanagregar.cpp"
+  "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/EWIEGA46WW/qrc_imagenes.cpp"
   "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/mocs_compilation.cpp"
   "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/charactersheetmanager.cpp"
   "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/main.cpp"
+  "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/ventanagregar.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -65,8 +68,10 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/*.h")
 set(OLD_GLOB
   "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/include/ui_charactersheetmanager.h"
+  "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/include/ui_ventanagregar.h"
   "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/moc_predefs.h"
   "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/charactersheetmanager.h"
+  "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/ventanagregar.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -148,6 +153,7 @@ endif()
 # _directory_contents at D:/Qt/6.9.1/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/*.qrc")
 set(OLD_GLOB
+  "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/imagenes.qrc"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -168,6 +174,7 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/*.ui")
 set(OLD_GLOB
   "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/charactersheetmanager.ui"
+  "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/ventanagregar.ui"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

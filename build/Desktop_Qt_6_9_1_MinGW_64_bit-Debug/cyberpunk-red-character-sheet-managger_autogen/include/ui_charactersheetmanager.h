@@ -25,11 +25,11 @@ public:
     QWidget *centralwidget;
     QLabel *logo;
     QLabel *label_2;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
+    QPushButton *Agregar;
+    QPushButton *Editar;
+    QPushButton *Eliminar;
     QFrame *frame;
-    QPushButton *pushButton_4;
+    QPushButton *Salir;
 
     void setupUi(QMainWindow *CharacterSheetManager)
     {
@@ -49,7 +49,7 @@ public:
         logo->setGeometry(QRect(50, 30, 281, 111));
         logo->setStyleSheet(QString::fromUtf8("border: 0px solid red;\n"
 ""));
-        logo->setPixmap(QPixmap(QString::fromUtf8("imagenes/Cyberpunk-RED-logo.png")));
+        logo->setPixmap(QPixmap(QString::fromUtf8(":/img/imagenes/Cyberpunk-RED-logo.png")));
         logo->setScaledContents(true);
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName("label_2");
@@ -65,26 +65,31 @@ public:
         label_2->setScaledContents(false);
         label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
         label_2->setWordWrap(false);
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(70, 220, 241, 31));
-        pushButton->setStyleSheet(QString::fromUtf8("background-color: #b4b4b4;\n"
+        Agregar = new QPushButton(centralwidget);
+        Agregar->setObjectName("Agregar");
+        Agregar->setGeometry(QRect(70, 220, 241, 31));
+        Agregar->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: #b4b4b4;\n"
+"	border: 4px solid red;\n"
+"	font-weight: bold;\n"
+"	color: black;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #848686;\n"
+"	border: 4px solid #bd0000;\n"
+"}"));
+        Editar = new QPushButton(centralwidget);
+        Editar->setObjectName("Editar");
+        Editar->setGeometry(QRect(70, 270, 241, 31));
+        Editar->setStyleSheet(QString::fromUtf8("background-color: #c0c0c0;\n"
 "border: 4px solid red;\n"
 "font-weight: bold;\n"
 "color: black;\n"
 ""));
-        pushButton_2 = new QPushButton(centralwidget);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(70, 270, 241, 31));
-        pushButton_2->setStyleSheet(QString::fromUtf8("background-color: #c0c0c0;\n"
-"border: 4px solid red;\n"
-"font-weight: bold;\n"
-"color: black;\n"
-""));
-        pushButton_3 = new QPushButton(centralwidget);
-        pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(70, 320, 241, 31));
-        pushButton_3->setStyleSheet(QString::fromUtf8("background-color: #c0c0c0;\n"
+        Eliminar = new QPushButton(centralwidget);
+        Eliminar->setObjectName("Eliminar");
+        Eliminar->setGeometry(QRect(70, 320, 241, 31));
+        Eliminar->setStyleSheet(QString::fromUtf8("background-color: #c0c0c0;\n"
 "border: 4px solid red;\n"
 "font-weight: bold;\n"
 "color: black;\n"
@@ -94,10 +99,10 @@ public:
         frame->setGeometry(QRect(60, 210, 261, 201));
         frame->setFrameShape(QFrame::Shape::StyledPanel);
         frame->setFrameShadow(QFrame::Shadow::Raised);
-        pushButton_4 = new QPushButton(frame);
-        pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setGeometry(QRect(50, 160, 161, 31));
-        pushButton_4->setStyleSheet(QString::fromUtf8("background-color: #c0c0c0;\n"
+        Salir = new QPushButton(frame);
+        Salir->setObjectName("Salir");
+        Salir->setGeometry(QRect(50, 160, 161, 31));
+        Salir->setStyleSheet(QString::fromUtf8("background-color: #c0c0c0;\n"
 "border: 4px solid red;\n"
 "font-weight: bold;\n"
 "color: black;\n"
@@ -105,10 +110,10 @@ public:
         CharacterSheetManager->setCentralWidget(centralwidget);
         frame->raise();
         label_2->raise();
+        Agregar->raise();
+        Editar->raise();
+        Eliminar->raise();
         logo->raise();
-        pushButton->raise();
-        pushButton_2->raise();
-        pushButton_3->raise();
 
         retranslateUi(CharacterSheetManager);
 
@@ -120,10 +125,10 @@ public:
         CharacterSheetManager->setWindowTitle(QCoreApplication::translate("CharacterSheetManager", "CharacterSheetManager", nullptr));
         logo->setText(QString());
         label_2->setText(QCoreApplication::translate("CharacterSheetManager", "GESTOR HOJA DE PERSONAJE", nullptr));
-        pushButton->setText(QCoreApplication::translate("CharacterSheetManager", "AGREGAR", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("CharacterSheetManager", "EDITAR", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("CharacterSheetManager", "ELIMINAR", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("CharacterSheetManager", "SALIR", nullptr));
+        Agregar->setText(QCoreApplication::translate("CharacterSheetManager", "AGREGAR", nullptr));
+        Editar->setText(QCoreApplication::translate("CharacterSheetManager", "EDITAR", nullptr));
+        Eliminar->setText(QCoreApplication::translate("CharacterSheetManager", "ELIMINAR", nullptr));
+        Salir->setText(QCoreApplication::translate("CharacterSheetManager", "SALIR", nullptr));
     } // retranslateUi
 
 };

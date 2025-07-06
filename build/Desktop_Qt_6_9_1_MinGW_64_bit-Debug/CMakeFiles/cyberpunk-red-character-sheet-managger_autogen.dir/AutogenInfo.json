@@ -347,7 +347,8 @@
 		"D:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake",
 		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
 		"D:/Qt/6.9.1/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
-		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
+		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GNUInstallDirs.cmake",
+		"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/imagenes.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger",
 	"CROSS_CONFIG" : false,
@@ -359,6 +360,12 @@
 			"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/charactersheetmanager.h",
 			"MU",
 			"EWIEGA46WW/moc_charactersheetmanager.cpp",
+			null
+		],
+		[
+			"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/ventanagregar.h",
+			"MU",
+			"EWIEGA46WW/moc_ventanagregar.cpp",
 			null
 		]
 	],
@@ -440,6 +447,11 @@
 		],
 		[
 			"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/ventanagregar.cpp",
 			"MU",
 			null
 		]

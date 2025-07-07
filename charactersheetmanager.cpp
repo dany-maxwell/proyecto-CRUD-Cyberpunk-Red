@@ -20,3 +20,9 @@ void CharacterSheetManager::on_Agregar_clicked()
     ventana->show();
 }
 
+
+void CharacterSheetManager::on_Salir_clicked()
+{
+    close();
+}
+

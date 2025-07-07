@@ -90,6 +90,9 @@ font: 14pt &quot;OCR A&quot;;</string>
       <height>31</height>
      </rect>
     </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 	background-color: #b4b4b4;

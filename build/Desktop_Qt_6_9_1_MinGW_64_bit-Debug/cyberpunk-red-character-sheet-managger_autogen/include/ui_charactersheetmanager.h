@@ -68,6 +68,7 @@ public:
         Agregar = new QPushButton(centralwidget);
         Agregar->setObjectName("Agregar");
         Agregar->setGeometry(QRect(70, 220, 241, 31));
+        Agregar->setMouseTracking(true);
         Agregar->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: #b4b4b4;\n"
 "	border: 4px solid red;\n"

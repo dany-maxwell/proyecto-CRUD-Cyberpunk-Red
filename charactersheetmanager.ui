@@ -164,7 +164,7 @@ color: black;
       <string>EDITAR</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="Editar_2">
+    <widget class="QPushButton" name="Revisar">
      <property name="geometry">
       <rect>
        <x>10</x>

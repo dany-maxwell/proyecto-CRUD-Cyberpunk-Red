@@ -1,5 +1,4 @@
 #include "charactersheetmanager.h"
-
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
@@ -18,6 +17,7 @@ int main(int argc, char *argv[])
         }
     }
     CharacterSheetManager w;
-    w.show();
+    w.setFixedSize(w.size());
+    w.show();  
     return a.exec();
 }

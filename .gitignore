@@ -1,3 +1,15 @@
+# Archivos de CMake
+CMakeFiles/
+cmake_install.cmake
+CMakeCache.txt
+#Carpetas adicionales de compilacion
+debug/
+release/
+#Archivos IDE
+.idea/
+.vscode/
+#Archivos de dependencias de Qt
+*.qrc.depends
 # Qt / C++ build files
 *.o
 *.obj
@@ -8,6 +20,8 @@
 build-*/
 Makefile
 *.autosave
+# Archivo de registro 
+CMakeConfigureLog.yaml
 
 # Qt Creator config
 *.qmake.stash

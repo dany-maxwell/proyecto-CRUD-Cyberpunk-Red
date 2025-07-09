@@ -1,6 +1,6 @@
 #ifndef VENTANAGREGAR_H
 #define VENTANAGREGAR_H
-
+#include "Pesonaje.h"
 #include <QDialog>
 
 namespace Ui {
@@ -17,6 +17,11 @@ public:
 
 private:
     Ui::ventanAgregar *ui;
+    QList<Personaje> personajes;
+private slots:
+    void agregarPersonaje();
+
 };
+
 
 #endif // VENTANAGREGAR_H

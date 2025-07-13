@@ -17,7 +17,7 @@ public:
 
 private:
     Ui::ventanAgregar *ui;
-    QList<Estadisticas> personajes;
+    QList<Cyberpunk> personajes;
 private slots:
     void agregarPersonaje();
 

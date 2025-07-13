@@ -8,7 +8,7 @@ struct Estadisticas {
     int destreza;
     int tecnica;
     int frialdad;
-    int volundad;
+    int voluntad;
     int suerte;
     int suerteMax;
     int movimiento;
@@ -18,9 +18,9 @@ struct Estadisticas {
 };
 
 struct Datos {
-    string nombre;
-    string rol;
-    string habilidadRol;
+    QString nombre;
+    QString rol;
+    QString habilidadRol;
     int nivelHabilidad;
     int humanidad;
     int puntosMejora;
@@ -34,6 +34,7 @@ struct Estado {
 };
 
 struct Cyberpunk {
+    QString nombre;
     Datos datos;
     Estadisticas base;
     Estado estado;

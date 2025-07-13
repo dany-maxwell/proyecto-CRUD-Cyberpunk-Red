@@ -20,17 +20,28 @@ ventanAgregar::~ventanAgregar()
 }
 
 void ventanAgregar::agregarPersonaje() {
-    Estadisticas nuevo;
-    nuevo.inteligencia = ui->inteligenciaSpinBox->value();
-    nuevo.reflejos = ui->reflejosSpinBox->value();
-    nuevo.destreza = ui->destrezaSpinBox->value();
-    nuevo.tecnica = ui->tecnicaSpinBox->value();
-    nuevo.frialdad = ui->frialdadSpinBox->value();
-    nuevo.volundad = ui->voluntadSpinBox->value();
-    nuevo.suerte = ui->suerteSpinBox->value();
-    nuevo.movimiento = ui->movilidadSpinBox->value();
-    nuevo.tipoCorporal = ui->tipo_corporalSpinBox->value();
-    nuevo.empatia = ui->empatiaSpinBox->value();
+    Estadisticas Habilidad;
+    Habilidad.inteligencia = ui->inteligenciaSpinBox->value();
+    Habilidad.reflejos = ui->reflejosSpinBox->value();
+    Habilidad.destreza = ui->destrezaSpinBox->value();
+    Habilidad.tecnica = ui->tecnicaSpinBox->value();
+    Habilidad.frialdad = ui->frialdadSpinBox->value();
+    Habilidad.voluntad = ui->voluntadSpinBox->value();
+    Habilidad.suerte = ui->suerteSpinBox->value();
+    Habilidad.movimiento = ui->movilidadSpinBox->value();
+    Habilidad.tipoCorporal = ui->tipo_corporalSpinBox->value();
+    Habilidad.empatia = ui->empatiaSpinBox->value();
+    Datos nuevo;
+    nuevo.rol = ui->rolLineEdit->text();
+    Estado condicion;
+    condicion.vidaActual = ui->vidaActualSpinBox->value();
+    Cyberpunk nuevoPersonaje;
+    nuevoPersonaje.nombre = ui->nombreLineEdit->text();
+    nuevoPersonaje.base=Habilidad;
+    nuevoPersonaje.datos=nuevo;
+    nuevoPersonaje.estado=condicion;
+    personajes.append(nuevoPersonaje);
+
 
     QString resumen = "Personaje agregado exitosamente";
 

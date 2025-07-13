@@ -74,14 +74,21 @@ public:
         Salir = new QPushButton(frame);
         Salir->setObjectName("Salir");
         Salir->setGeometry(QRect(50, 190, 161, 31));
-        Salir->setStyleSheet(QString::fromUtf8("background-color: #c0c0c0;\n"
-"border: 4px solid red;\n"
-"font-weight: bold;\n"
-"color: black;\n"
-""));
+        Salir->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
+        Salir->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: #b4b4b4;\n"
+"	border: 4px solid red;\n"
+"	font-weight: bold;\n"
+"	color: black;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #848686;\n"
+"	border: 4px solid #bd0000;\n"
+"}"));
         Agregar = new QPushButton(frame);
         Agregar->setObjectName("Agregar");
         Agregar->setGeometry(QRect(10, 30, 241, 31));
+        Agregar->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         Agregar->setMouseTracking(true);
         Agregar->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: #b4b4b4;\n"

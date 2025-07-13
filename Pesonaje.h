@@ -1,17 +1,41 @@
 #ifndef PESONAJE_H
 #define PESONAJE_H
 #include <QString>
-struct Personaje{
-    QString nombre;
+using namespace std;
+struct Estadisticas {
     int inteligencia;
     int reflejos;
     int destreza;
     int tecnica;
     int frialdad;
-    int voluntad;
+    int volundad;
     int suerte;
-    int movilidad;
+    int suerteMax;
+    int movimiento;
     int tipoCorporal;
     int empatia;
+    int empatiaMax;
+};
+
+struct Datos {
+    string nombre;
+    string rol;
+    string habilidadRol;
+    int nivelHabilidad;
+    int humanidad;
+    int puntosMejora;
+};
+
+struct Estado {
+    int vidaMaxima;
+    int vidaActual;
+    int armaduraCabeza;
+    int armaduraCuerpo;
+};
+
+struct Cyberpunk {
+    Datos datos;
+    Estadisticas base;
+    Estado estado;
 };
 #endif // PESONAJE_H

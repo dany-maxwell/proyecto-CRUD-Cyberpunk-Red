@@ -19,6 +19,8 @@ release/
 *.pro.user
 build-*/
 Makefile
+Makefile*
+build/
 *.autosave
 # Archivo de registro 
 CMakeConfigureLog.yaml
@@ -26,3 +28,17 @@ CMakeConfigureLog.yaml
 # Qt Creator config
 *.qmake.stash
 *.directory
+*.so
+*.dll
+*.a
+*.moc
+*.lib
+*.config
+*.creator.*
+*.creator
+*.bak
+*~
+*.swp
+*.log
+*.tmp
+out/

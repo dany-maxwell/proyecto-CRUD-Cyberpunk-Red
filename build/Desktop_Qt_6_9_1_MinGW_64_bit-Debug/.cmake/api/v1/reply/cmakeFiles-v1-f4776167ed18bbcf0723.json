@@ -27,10 +27,12 @@
 			[
 				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CompilerIdCXX/CMakeCXXCompilerId.cpp",
 				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/EWIEGA46WW/moc_charactersheetmanager.cpp",
+				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/EWIEGA46WW/moc_ventanagregar.cpp",
 				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/EWIEGA46WW/qrc_imagenes.cpp",
 				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/mocs_compilation.cpp",
 				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/charactersheetmanager.cpp",
-				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/main.cpp"
+				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/main.cpp",
+				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/ventanagregar.cpp"
 			],
 			"recurse" : true
 		},
@@ -43,9 +45,12 @@
 			"expression" : "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/*.h",
 			"paths" : 
 			[
+				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/Pesonaje.h",
 				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/include/ui_charactersheetmanager.h",
+				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/include/ui_ventanagregar.h",
 				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/moc_predefs.h",
-				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/charactersheetmanager.h"
+				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/charactersheetmanager.h",
+				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/ventanagregar.h"
 			],
 			"recurse" : true
 		},
@@ -109,7 +114,8 @@
 			"expression" : "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/*.ui",
 			"paths" : 
 			[
-				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/charactersheetmanager.ui"
+				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/charactersheetmanager.ui",
+				"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/ventanagregar.ui"
 			],
 			"recurse" : true
 		}

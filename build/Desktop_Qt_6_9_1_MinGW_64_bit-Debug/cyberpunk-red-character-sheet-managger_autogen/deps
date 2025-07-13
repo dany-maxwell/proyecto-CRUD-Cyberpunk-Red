@@ -1,4 +1,5 @@
 cyberpunk-red-character-sheet-managger_autogen/timestamp: \
+	D:/Qt/6.9.1/mingw_64/include/QtCore/QString \
 	D:/Qt/6.9.1/mingw_64/include/QtCore/q17memory.h \
 	D:/Qt/6.9.1/mingw_64/include/QtCore/q20functional.h \
 	D:/Qt/6.9.1/mingw_64/include/QtCore/q20iterator.h \
@@ -586,6 +587,7 @@ cyberpunk-red-character-sheet-managger_autogen/timestamp: \
 	D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
 	D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
 	D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/CMakeLists.txt \
+	D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/Pesonaje.h \
 	D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
 	D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/.qtc/package-manager/maintenance_tool_provider.cmake \
 	D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \

@@ -25,11 +25,12 @@ public:
     QWidget *centralwidget;
     QLabel *logo;
     QLabel *label_2;
-    QPushButton *Agregar;
-    QPushButton *Editar;
-    QPushButton *Eliminar;
     QFrame *frame;
     QPushButton *Salir;
+    QPushButton *Agregar;
+    QPushButton *Editar;
+    QPushButton *Revisar;
+    QPushButton *Eliminar;
 
     void setupUi(QMainWindow *CharacterSheetManager)
     {
@@ -65,9 +66,22 @@ public:
         label_2->setScaledContents(false);
         label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
         label_2->setWordWrap(false);
-        Agregar = new QPushButton(centralwidget);
+        frame = new QFrame(centralwidget);
+        frame->setObjectName("frame");
+        frame->setGeometry(QRect(60, 200, 261, 231));
+        frame->setFrameShape(QFrame::Shape::StyledPanel);
+        frame->setFrameShadow(QFrame::Shadow::Raised);
+        Salir = new QPushButton(frame);
+        Salir->setObjectName("Salir");
+        Salir->setGeometry(QRect(50, 190, 161, 31));
+        Salir->setStyleSheet(QString::fromUtf8("background-color: #c0c0c0;\n"
+"border: 4px solid red;\n"
+"font-weight: bold;\n"
+"color: black;\n"
+""));
+        Agregar = new QPushButton(frame);
         Agregar->setObjectName("Agregar");
-        Agregar->setGeometry(QRect(70, 220, 241, 31));
+        Agregar->setGeometry(QRect(10, 30, 241, 31));
         Agregar->setMouseTracking(true);
         Agregar->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	background-color: #b4b4b4;\n"
@@ -79,31 +93,26 @@ public:
 "    background-color: #848686;\n"
 "	border: 4px solid #bd0000;\n"
 "}"));
-        Editar = new QPushButton(centralwidget);
+        Editar = new QPushButton(frame);
         Editar->setObjectName("Editar");
-        Editar->setGeometry(QRect(70, 270, 241, 31));
+        Editar->setGeometry(QRect(10, 70, 241, 31));
         Editar->setStyleSheet(QString::fromUtf8("background-color: #c0c0c0;\n"
 "border: 4px solid red;\n"
 "font-weight: bold;\n"
 "color: black;\n"
 ""));
-        Eliminar = new QPushButton(centralwidget);
-        Eliminar->setObjectName("Eliminar");
-        Eliminar->setGeometry(QRect(70, 320, 241, 31));
-        Eliminar->setStyleSheet(QString::fromUtf8("background-color: #c0c0c0;\n"
+        Revisar = new QPushButton(frame);
+        Revisar->setObjectName("Revisar");
+        Revisar->setGeometry(QRect(10, 110, 241, 31));
+        Revisar->setStyleSheet(QString::fromUtf8("background-color: #c0c0c0;\n"
 "border: 4px solid red;\n"
 "font-weight: bold;\n"
 "color: black;\n"
 ""));
-        frame = new QFrame(centralwidget);
-        frame->setObjectName("frame");
-        frame->setGeometry(QRect(60, 210, 261, 201));
-        frame->setFrameShape(QFrame::Shape::StyledPanel);
-        frame->setFrameShadow(QFrame::Shadow::Raised);
-        Salir = new QPushButton(frame);
-        Salir->setObjectName("Salir");
-        Salir->setGeometry(QRect(50, 160, 161, 31));
-        Salir->setStyleSheet(QString::fromUtf8("background-color: #c0c0c0;\n"
+        Eliminar = new QPushButton(frame);
+        Eliminar->setObjectName("Eliminar");
+        Eliminar->setGeometry(QRect(10, 150, 241, 31));
+        Eliminar->setStyleSheet(QString::fromUtf8("background-color: #c0c0c0;\n"
 "border: 4px solid red;\n"
 "font-weight: bold;\n"
 "color: black;\n"
@@ -111,9 +120,6 @@ public:
         CharacterSheetManager->setCentralWidget(centralwidget);
         frame->raise();
         label_2->raise();
-        Agregar->raise();
-        Editar->raise();
-        Eliminar->raise();
         logo->raise();
 
         retranslateUi(CharacterSheetManager);
@@ -126,10 +132,11 @@ public:
         CharacterSheetManager->setWindowTitle(QCoreApplication::translate("CharacterSheetManager", "CharacterSheetManager", nullptr));
         logo->setText(QString());
         label_2->setText(QCoreApplication::translate("CharacterSheetManager", "GESTOR HOJA DE PERSONAJE", nullptr));
+        Salir->setText(QCoreApplication::translate("CharacterSheetManager", "SALIR", nullptr));
         Agregar->setText(QCoreApplication::translate("CharacterSheetManager", "AGREGAR", nullptr));
         Editar->setText(QCoreApplication::translate("CharacterSheetManager", "EDITAR", nullptr));
+        Revisar->setText(QCoreApplication::translate("CharacterSheetManager", "REVISAR", nullptr));
         Eliminar->setText(QCoreApplication::translate("CharacterSheetManager", "ELIMINAR", nullptr));
-        Salir->setText(QCoreApplication::translate("CharacterSheetManager", "SALIR", nullptr));
     } // retranslateUi
 
 };

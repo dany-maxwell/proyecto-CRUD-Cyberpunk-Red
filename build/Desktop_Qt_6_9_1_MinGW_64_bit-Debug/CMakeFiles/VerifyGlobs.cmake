@@ -67,6 +67,7 @@ endif()
 # _directory_contents at D:/Qt/6.9.1/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/*.h")
 set(OLD_GLOB
+  "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/Pesonaje.h"
   "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/include/ui_charactersheetmanager.h"
   "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/include/ui_ventanagregar.h"
   "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/moc_predefs.h"

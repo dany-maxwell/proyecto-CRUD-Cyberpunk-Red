@@ -1,5 +1,6 @@
 D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/EWIEGA46WW/moc_ventanagregar.cpp: D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/ventanagregar.h \
   D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/moc_predefs.h \
+  D:/Qt/6.9.1/mingw_64/include/QtCore/QString \
   D:/Qt/6.9.1/mingw_64/include/QtCore/q17memory.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/q20functional.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/q20iterator.h \
@@ -368,4 +369,5 @@ D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desk
   D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sys/types.h \
   D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
-  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
+  D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
+  D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/Pesonaje.h

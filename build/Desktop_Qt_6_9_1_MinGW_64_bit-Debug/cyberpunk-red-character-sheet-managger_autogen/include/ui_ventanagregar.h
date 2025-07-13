@@ -15,6 +15,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
 
 QT_BEGIN_NAMESPACE
 
@@ -39,23 +40,25 @@ public:
     QLabel *label_10;
     QLabel *label_11;
     QLabel *label_12;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
-    QLineEdit *lineEdit_3;
-    QLineEdit *lineEdit_4;
-    QLineEdit *lineEdit_5;
     QLineEdit *lineEdit_6;
-    QLineEdit *lineEdit_7;
-    QLineEdit *lineEdit_8;
-    QLineEdit *lineEdit_9;
-    QLineEdit *lineEdit_10;
-    QLineEdit *lineEdit_11;
+    QSpinBox *inteligenciaSpinBox;
+    QSpinBox *reflejosSpinBox;
+    QSpinBox *destrezaSpinBox;
+    QSpinBox *tecnicaSpinBox;
+    QSpinBox *frialdadSpinBox;
+    QSpinBox *voluntadSpinBox;
+    QSpinBox *suerteSpinBox;
+    QSpinBox *movilidadSpinBox;
+    QSpinBox *tipo_corporalSpinBox;
+    QSpinBox *empatiaSpinBox;
+    QLabel *label_13;
+    QLineEdit *nombreLineEdit;
 
     void setupUi(QDialog *ventanAgregar)
     {
         if (ventanAgregar->objectName().isEmpty())
             ventanAgregar->setObjectName("ventanAgregar");
-        ventanAgregar->resize(814, 603);
+        ventanAgregar->resize(832, 612);
         ventanAgregar->setStyleSheet(QString::fromUtf8("background-color: #202020;\n"
 "font: 9pt \"OCR A\";\n"
 "color: #f0f0f0;\n"
@@ -69,13 +72,13 @@ public:
         label->setScaledContents(true);
         seccionEstado = new QLabel(ventanAgregar);
         seccionEstado->setObjectName("seccionEstado");
-        seccionEstado->setGeometry(QRect(10, 80, 351, 511));
+        seccionEstado->setGeometry(QRect(10, 80, 351, 521));
         seccionEstado_2 = new QLabel(ventanAgregar);
         seccionEstado_2->setObjectName("seccionEstado_2");
-        seccionEstado_2->setGeometry(QRect(370, 80, 71, 511));
+        seccionEstado_2->setGeometry(QRect(370, 80, 151, 311));
         seccionEstado_3 = new QLabel(ventanAgregar);
         seccionEstado_3->setObjectName("seccionEstado_3");
-        seccionEstado_3->setGeometry(QRect(450, 80, 351, 511));
+        seccionEstado_3->setGeometry(QRect(530, 80, 291, 521));
         label_2 = new QLabel(ventanAgregar);
         label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(20, 90, 331, 181));
@@ -120,7 +123,7 @@ public:
 "}"));
         label_3 = new QLabel(ventanAgregar);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(380, 90, 51, 41));
+        label_3->setGeometry(QRect(380, 90, 61, 51));
         label_3->setStyleSheet(QString::fromUtf8("background-color: #b4b4b4;\n"
 "border: 2px solid red;\n"
 "font-weight: bold;\n"
@@ -128,7 +131,7 @@ public:
         label_3->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
         label_4 = new QLabel(ventanAgregar);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(380, 140, 51, 41));
+        label_4->setGeometry(QRect(380, 150, 61, 51));
         label_4->setStyleSheet(QString::fromUtf8("background-color: #b4b4b4;\n"
 "border: 2px solid red;\n"
 "font-weight: bold;\n"
@@ -136,7 +139,7 @@ public:
         label_4->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
         label_5 = new QLabel(ventanAgregar);
         label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(380, 190, 51, 41));
+        label_5->setGeometry(QRect(380, 210, 61, 51));
         label_5->setStyleSheet(QString::fromUtf8("background-color: #b4b4b4;\n"
 "border: 2px solid red;\n"
 "font-weight: bold;\n"
@@ -144,7 +147,7 @@ public:
         label_5->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
         label_6 = new QLabel(ventanAgregar);
         label_6->setObjectName("label_6");
-        label_6->setGeometry(QRect(380, 240, 51, 41));
+        label_6->setGeometry(QRect(380, 271, 61, 51));
         label_6->setStyleSheet(QString::fromUtf8("background-color: #b4b4b4;\n"
 "border: 2px solid red;\n"
 "font-weight: bold;\n"
@@ -152,7 +155,7 @@ public:
         label_6->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
         label_7 = new QLabel(ventanAgregar);
         label_7->setObjectName("label_7");
-        label_7->setGeometry(QRect(380, 290, 51, 41));
+        label_7->setGeometry(QRect(380, 331, 61, 51));
         label_7->setStyleSheet(QString::fromUtf8("background-color: #b4b4b4;\n"
 "border: 2px solid red;\n"
 "font-weight: bold;\n"
@@ -160,7 +163,7 @@ public:
         label_7->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
         label_8 = new QLabel(ventanAgregar);
         label_8->setObjectName("label_8");
-        label_8->setGeometry(QRect(380, 340, 51, 41));
+        label_8->setGeometry(QRect(450, 90, 61, 51));
         label_8->setStyleSheet(QString::fromUtf8("background-color: #b4b4b4;\n"
 "border: 2px solid red;\n"
 "font-weight: bold;\n"
@@ -168,7 +171,7 @@ public:
         label_8->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
         label_9 = new QLabel(ventanAgregar);
         label_9->setObjectName("label_9");
-        label_9->setGeometry(QRect(380, 390, 51, 41));
+        label_9->setGeometry(QRect(450, 150, 61, 51));
         label_9->setStyleSheet(QString::fromUtf8("background-color: #b4b4b4;\n"
 "border: 2px solid red;\n"
 "font-weight: bold;\n"
@@ -176,7 +179,7 @@ public:
         label_9->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
         label_10 = new QLabel(ventanAgregar);
         label_10->setObjectName("label_10");
-        label_10->setGeometry(QRect(380, 440, 51, 41));
+        label_10->setGeometry(QRect(450, 210, 61, 51));
         label_10->setStyleSheet(QString::fromUtf8("background-color: #b4b4b4;\n"
 "border: 2px solid red;\n"
 "font-weight: bold;\n"
@@ -184,7 +187,7 @@ public:
         label_10->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
         label_11 = new QLabel(ventanAgregar);
         label_11->setObjectName("label_11");
-        label_11->setGeometry(QRect(380, 490, 51, 41));
+        label_11->setGeometry(QRect(450, 270, 61, 51));
         label_11->setStyleSheet(QString::fromUtf8("background-color: #b4b4b4;\n"
 "border: 2px solid red;\n"
 "font-weight: bold;\n"
@@ -192,52 +195,12 @@ public:
         label_11->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
         label_12 = new QLabel(ventanAgregar);
         label_12->setObjectName("label_12");
-        label_12->setGeometry(QRect(380, 540, 51, 41));
+        label_12->setGeometry(QRect(450, 330, 61, 51));
         label_12->setStyleSheet(QString::fromUtf8("background-color: #b4b4b4;\n"
 "border: 2px solid red;\n"
 "font-weight: bold;\n"
 "color: black;"));
         label_12->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
-        lineEdit = new QLineEdit(ventanAgregar);
-        lineEdit->setObjectName("lineEdit");
-        lineEdit->setGeometry(QRect(390, 110, 31, 21));
-        lineEdit->setStyleSheet(QString::fromUtf8("border: 0px;\n"
-"background-color: rgba(255,255,255,0);\n"
-"font-weight: bold;\n"
-"color: black;"));
-        lineEdit->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
-        lineEdit_2 = new QLineEdit(ventanAgregar);
-        lineEdit_2->setObjectName("lineEdit_2");
-        lineEdit_2->setGeometry(QRect(390, 160, 31, 21));
-        lineEdit_2->setStyleSheet(QString::fromUtf8("border: 0px;\n"
-"background-color: rgba(255,255,255,0);\n"
-"font-weight: bold;\n"
-"color: black;"));
-        lineEdit_2->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
-        lineEdit_3 = new QLineEdit(ventanAgregar);
-        lineEdit_3->setObjectName("lineEdit_3");
-        lineEdit_3->setGeometry(QRect(390, 210, 31, 21));
-        lineEdit_3->setStyleSheet(QString::fromUtf8("border: 0px;\n"
-"background-color: rgba(255,255,255,0);\n"
-"font-weight: bold;\n"
-"color: black;"));
-        lineEdit_3->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
-        lineEdit_4 = new QLineEdit(ventanAgregar);
-        lineEdit_4->setObjectName("lineEdit_4");
-        lineEdit_4->setGeometry(QRect(390, 260, 31, 21));
-        lineEdit_4->setStyleSheet(QString::fromUtf8("border: 0px;\n"
-"background-color: rgba(255,255,255,0);\n"
-"font-weight: bold;\n"
-"color: black;"));
-        lineEdit_4->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
-        lineEdit_5 = new QLineEdit(ventanAgregar);
-        lineEdit_5->setObjectName("lineEdit_5");
-        lineEdit_5->setGeometry(QRect(390, 310, 31, 21));
-        lineEdit_5->setStyleSheet(QString::fromUtf8("border: 0px;\n"
-"background-color: rgba(255,255,255,0);\n"
-"font-weight: bold;\n"
-"color: black;"));
-        lineEdit_5->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
         lineEdit_6 = new QLineEdit(ventanAgregar);
         lineEdit_6->setObjectName("lineEdit_6");
         lineEdit_6->setGeometry(QRect(760, 580, 31, 21));
@@ -246,46 +209,58 @@ public:
 "font-weight: bold;\n"
 "color: black;"));
         lineEdit_6->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        lineEdit_7 = new QLineEdit(ventanAgregar);
-        lineEdit_7->setObjectName("lineEdit_7");
-        lineEdit_7->setGeometry(QRect(390, 410, 31, 21));
-        lineEdit_7->setStyleSheet(QString::fromUtf8("border: 0px;\n"
-"background-color: rgba(255,255,255,0);\n"
+        inteligenciaSpinBox = new QSpinBox(ventanAgregar);
+        inteligenciaSpinBox->setObjectName("inteligenciaSpinBox");
+        inteligenciaSpinBox->setGeometry(QRect(379, 110, 61, 25));
+        inteligenciaSpinBox->setMinimumSize(QSize(50, 0));
+        inteligenciaSpinBox->setMaximum(10);
+        reflejosSpinBox = new QSpinBox(ventanAgregar);
+        reflejosSpinBox->setObjectName("reflejosSpinBox");
+        reflejosSpinBox->setGeometry(QRect(381, 170, 61, 25));
+        reflejosSpinBox->setMaximum(10);
+        destrezaSpinBox = new QSpinBox(ventanAgregar);
+        destrezaSpinBox->setObjectName("destrezaSpinBox");
+        destrezaSpinBox->setGeometry(QRect(381, 230, 61, 25));
+        destrezaSpinBox->setMaximum(10);
+        tecnicaSpinBox = new QSpinBox(ventanAgregar);
+        tecnicaSpinBox->setObjectName("tecnicaSpinBox");
+        tecnicaSpinBox->setGeometry(QRect(381, 290, 61, 25));
+        tecnicaSpinBox->setMaximum(10);
+        frialdadSpinBox = new QSpinBox(ventanAgregar);
+        frialdadSpinBox->setObjectName("frialdadSpinBox");
+        frialdadSpinBox->setGeometry(QRect(381, 350, 61, 25));
+        frialdadSpinBox->setMaximum(10);
+        voluntadSpinBox = new QSpinBox(ventanAgregar);
+        voluntadSpinBox->setObjectName("voluntadSpinBox");
+        voluntadSpinBox->setGeometry(QRect(451, 110, 61, 25));
+        voluntadSpinBox->setMaximum(10);
+        suerteSpinBox = new QSpinBox(ventanAgregar);
+        suerteSpinBox->setObjectName("suerteSpinBox");
+        suerteSpinBox->setGeometry(QRect(451, 170, 61, 25));
+        suerteSpinBox->setMaximum(10);
+        movilidadSpinBox = new QSpinBox(ventanAgregar);
+        movilidadSpinBox->setObjectName("movilidadSpinBox");
+        movilidadSpinBox->setGeometry(QRect(451, 230, 61, 25));
+        movilidadSpinBox->setMaximum(10);
+        tipo_corporalSpinBox = new QSpinBox(ventanAgregar);
+        tipo_corporalSpinBox->setObjectName("tipo_corporalSpinBox");
+        tipo_corporalSpinBox->setGeometry(QRect(451, 290, 61, 25));
+        tipo_corporalSpinBox->setMaximum(10);
+        empatiaSpinBox = new QSpinBox(ventanAgregar);
+        empatiaSpinBox->setObjectName("empatiaSpinBox");
+        empatiaSpinBox->setGeometry(QRect(451, 350, 61, 25));
+        empatiaSpinBox->setMaximum(10);
+        label_13 = new QLabel(ventanAgregar);
+        label_13->setObjectName("label_13");
+        label_13->setGeometry(QRect(370, 400, 151, 51));
+        label_13->setStyleSheet(QString::fromUtf8("background-color: #b4b4b4;\n"
+"border: 2px solid red;\n"
 "font-weight: bold;\n"
 "color: black;"));
-        lineEdit_7->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
-        lineEdit_8 = new QLineEdit(ventanAgregar);
-        lineEdit_8->setObjectName("lineEdit_8");
-        lineEdit_8->setGeometry(QRect(390, 360, 31, 21));
-        lineEdit_8->setStyleSheet(QString::fromUtf8("border: 0px;\n"
-"background-color: rgba(255,255,255,0);\n"
-"font-weight: bold;\n"
-"color: black;"));
-        lineEdit_8->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
-        lineEdit_9 = new QLineEdit(ventanAgregar);
-        lineEdit_9->setObjectName("lineEdit_9");
-        lineEdit_9->setGeometry(QRect(390, 460, 31, 21));
-        lineEdit_9->setStyleSheet(QString::fromUtf8("border: 0px;\n"
-"background-color: rgba(255,255,255,0);\n"
-"font-weight: bold;\n"
-"color: black;"));
-        lineEdit_9->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
-        lineEdit_10 = new QLineEdit(ventanAgregar);
-        lineEdit_10->setObjectName("lineEdit_10");
-        lineEdit_10->setGeometry(QRect(390, 510, 31, 21));
-        lineEdit_10->setStyleSheet(QString::fromUtf8("border: 0px;\n"
-"background-color: rgba(255,255,255,0);\n"
-"font-weight: bold;\n"
-"color: black;"));
-        lineEdit_10->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
-        lineEdit_11 = new QLineEdit(ventanAgregar);
-        lineEdit_11->setObjectName("lineEdit_11");
-        lineEdit_11->setGeometry(QRect(390, 560, 31, 21));
-        lineEdit_11->setStyleSheet(QString::fromUtf8("border: 0px;\n"
-"background-color: rgba(255,255,255,0);\n"
-"font-weight: bold;\n"
-"color: black;"));
-        lineEdit_11->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
+        label_13->setAlignment(Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop);
+        nombreLineEdit = new QLineEdit(ventanAgregar);
+        nombreLineEdit->setObjectName("nombreLineEdit");
+        nombreLineEdit->setGeometry(QRect(390, 420, 113, 24));
 
         retranslateUi(ventanAgregar);
 
@@ -313,6 +288,7 @@ public:
         label_10->setText(QCoreApplication::translate("ventanAgregar", "MOV", nullptr));
         label_11->setText(QCoreApplication::translate("ventanAgregar", "T.COR", nullptr));
         label_12->setText(QCoreApplication::translate("ventanAgregar", "EMP", nullptr));
+        label_13->setText(QCoreApplication::translate("ventanAgregar", "NAME", nullptr));
     } // retranslateUi
 
 };

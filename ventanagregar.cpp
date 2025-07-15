@@ -52,3 +52,9 @@ void ventanAgregar::agregarPersonaje() {
 
 
 
+
+void ventanAgregar::on_inteligenciaSpinBox_valueChanged(int arg1)
+{
+
+}
+

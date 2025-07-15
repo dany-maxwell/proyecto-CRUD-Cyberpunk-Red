@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>CharacterSheetManager</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="imagenes.qrc">
+    <normaloff>:/img/imagenes/cyberpunk_icon.png</normaloff>:/img/imagenes/cyberpunk_icon.png</iconset>
+  </property>
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
@@ -99,9 +103,9 @@ font: 14pt &quot;OCR A&quot;;</string>
     <widget class="QPushButton" name="Salir">
      <property name="geometry">
       <rect>
-       <x>50</x>
-       <y>190</y>
-       <width>161</width>
+       <x>55</x>
+       <y>180</y>
+       <width>150</width>
        <height>31</height>
       </rect>
      </property>
@@ -127,9 +131,9 @@ QPushButton:hover {
     <widget class="QPushButton" name="Agregar">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>241</width>
+       <x>55</x>
+       <y>20</y>
+       <width>150</width>
        <height>31</height>
       </rect>
      </property>
@@ -158,9 +162,9 @@ QPushButton:hover {
     <widget class="QPushButton" name="Editar">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>70</y>
-       <width>241</width>
+       <x>55</x>
+       <y>60</y>
+       <width>150</width>
        <height>31</height>
       </rect>
      </property>
@@ -178,9 +182,9 @@ color: black;
     <widget class="QPushButton" name="Revisar">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>110</y>
-       <width>241</width>
+       <x>55</x>
+       <y>100</y>
+       <width>150</width>
        <height>31</height>
       </rect>
      </property>
@@ -198,9 +202,9 @@ color: black;
     <widget class="QPushButton" name="Eliminar">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>150</y>
-       <width>241</width>
+       <x>55</x>
+       <y>140</y>
+       <width>150</width>
        <height>31</height>
       </rect>
      </property>

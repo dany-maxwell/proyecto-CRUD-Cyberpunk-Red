@@ -1,5 +1,6 @@
 # Archivos de CMake
 CMakeFiles/
+CMakeFiles/*
 cmake_install.cmake
 CMakeCache.txt
 #Carpetas adicionales de compilacion
@@ -21,6 +22,7 @@ build-*/
 Makefile
 Makefile*
 build/
+build/*
 *.autosave
 # Archivo de registro 
 CMakeConfigureLog.yaml

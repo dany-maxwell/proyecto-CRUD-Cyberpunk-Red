@@ -21,6 +21,7 @@ private:
 private slots:
     void agregarPersonaje();
 
+    void on_inteligenciaSpinBox_valueChanged(int arg1);
 };
 
 

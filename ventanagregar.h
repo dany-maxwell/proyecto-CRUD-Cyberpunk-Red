@@ -14,6 +14,7 @@ public:
     explicit ventanAgregar(CharacterSheetManager *manager, QWidget *parent = nullptr);
 
     ~ventanAgregar();
+    CharacterSheetManager* mainRef = nullptr;
 
 private:
     Ui::ventanAgregar *ui;
@@ -23,7 +24,6 @@ private slots:
     void agregarPersonaje();
 
     void on_inteligenciaSpinBox_valueChanged(int arg1);
+    void on_Descartar_clicked();
 };
-
-
 #endif // VENTANAGREGAR_H

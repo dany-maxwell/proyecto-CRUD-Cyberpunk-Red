@@ -10,7 +10,9 @@
 	"INPUTS" : 
 	[
 		"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/imagenes/Cyberpunk-RED-logo.png",
-		"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/imagenes/Cyberpunk-RED-logo - Copy.jpeg"
+		"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/imagenes/cyberpunk_icon.png",
+		"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/imagenes/Cyberpunk-RED-logo - Copy.jpeg",
+		"D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/imagenes/Chara sheet - Page1.png"
 	],
 	"LOCK_FILE" : "D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/CMakeFiles/cyberpunk-red-character-sheet-managger_autogen.dir/AutoRcc_imagenes_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,

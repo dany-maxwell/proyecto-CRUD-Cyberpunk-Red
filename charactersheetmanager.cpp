@@ -9,6 +9,13 @@ CharacterSheetManager::CharacterSheetManager(QWidget *parent)
     , ui(new Ui::CharacterSheetManager)
 {
     ui->setupUi(this);
+    if (personajes.size() == 0){
+        ui->LISTA->hide();
+    }
+    else{
+        ui->LISTA->show();
+    }
+    this->adjustSize();
 }
 
 CharacterSheetManager::~CharacterSheetManager()
@@ -19,7 +26,15 @@ CharacterSheetManager::~CharacterSheetManager()
 void CharacterSheetManager::on_Agregar_clicked()
 {
     ventanAgregar *ventana = new ventanAgregar(this, this);
+    ventana->mainRef = this;
     ventana->exec();
+    if (personajes.size() == 0){
+        ui->LISTA->hide();
+    }
+    else{
+        ui->LISTA->show();
+    }
+    this->adjustSize();
 }
 
 
@@ -58,6 +73,25 @@ void CharacterSheetManager::agregarPersonaje(const Cyberpunk &nuevo) {
     personajes.append(nuevo);
 }
 
-
+void CharacterSheetManager::agregarPersonajeEnLista(const Cyberpunk nou){
+    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->layoutlista->layout());
+    if (layout){
+        QLabel* etiqueta = new QLabel(nou.nombre);
+        etiqueta->setFixedHeight(30);
+        etiqueta->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        etiqueta->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
+        etiqueta->setStyleSheet(
+            "color: lightgray;"
+            "background-color: #111111;"
+            "border: 1px solid red;"
+            "padding-left: 10px;"
+            "font-weight: bold;"
+        );
+        layout->addWidget(etiqueta);
+        layout->setSpacing(5);
+        layout->setContentsMargins(5, 5, 5, 5);
+        layout->setAlignment(Qt::AlignTop);
+    }
+}
 
 

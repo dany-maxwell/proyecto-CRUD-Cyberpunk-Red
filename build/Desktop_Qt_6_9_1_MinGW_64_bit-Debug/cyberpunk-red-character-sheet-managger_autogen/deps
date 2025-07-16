@@ -1,5 +1,7 @@
 cyberpunk-red-character-sheet-managger_autogen/timestamp: \
 	D:/Qt/6.9.1/mingw_64/include/QtCore/QString \
+	D:/Qt/6.9.1/mingw_64/include/QtCore/QStringList \
+	D:/Qt/6.9.1/mingw_64/include/QtCore/QTextStream \
 	D:/Qt/6.9.1/mingw_64/include/QtCore/q17memory.h \
 	D:/Qt/6.9.1/mingw_64/include/QtCore/q20functional.h \
 	D:/Qt/6.9.1/mingw_64/include/QtCore/q20iterator.h \

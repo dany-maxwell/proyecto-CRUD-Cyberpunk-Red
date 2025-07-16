@@ -71,11 +71,16 @@ void ventanAgregar::agregarPersonaje() {
 
     QMessageBox::information(this, "Éxito", resumen);
 
+    mainRef->agregarPersonajeEnLista(nuevoPersonaje);
+    this->close();
 }
 
+void ventanAgregar::on_Descartar_clicked()
+{
+    close();
+}
 
 void ventanAgregar::on_inteligenciaSpinBox_valueChanged(int arg1)
 {
 
 }
-

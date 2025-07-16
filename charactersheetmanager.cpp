@@ -9,13 +9,7 @@ CharacterSheetManager::CharacterSheetManager(QWidget *parent)
     , ui(new Ui::CharacterSheetManager)
 {
     ui->setupUi(this);
-    if (personajes.size() == 0){
-        ui->LISTA->hide();
-    }
-    else{
-        ui->LISTA->show();
-    }
-    this->adjustSize();
+    comprobarLista();
 }
 
 CharacterSheetManager::~CharacterSheetManager()
@@ -23,11 +17,7 @@ CharacterSheetManager::~CharacterSheetManager()
     delete ui;
 }
 
-void CharacterSheetManager::on_Agregar_clicked()
-{
-    ventanAgregar *ventana = new ventanAgregar(this, this);
-    ventana->mainRef = this;
-    ventana->exec();
+void CharacterSheetManager::comprobarLista(){
     if (personajes.size() == 0){
         ui->LISTA->hide();
     }
@@ -35,6 +25,14 @@ void CharacterSheetManager::on_Agregar_clicked()
         ui->LISTA->show();
     }
     this->adjustSize();
+}
+
+void CharacterSheetManager::on_Agregar_clicked()
+{
+    ventanAgregar *ventana = new ventanAgregar(this, this);
+    ventana->mainRef = this;
+    ventana->exec();
+    comprobarLista();
 }
 
 
@@ -76,18 +74,24 @@ void CharacterSheetManager::agregarPersonaje(const Cyberpunk &nuevo) {
 void CharacterSheetManager::agregarPersonajeEnLista(const Cyberpunk nou){
     QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->layoutlista->layout());
     if (layout){
-        QLabel* etiqueta = new QLabel(nou.nombre);
-        etiqueta->setFixedHeight(30);
-        etiqueta->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        etiqueta->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
-        etiqueta->setStyleSheet(
-            "color: lightgray;"
-            "background-color: #111111;"
-            "border: 1px solid red;"
-            "padding-left: 10px;"
-            "font-weight: bold;"
+        QPushButton* nombre = new QPushButton(nou.nombre+" "+ nou.datos.rol);
+        nombre->setFixedHeight(30);
+        nombre->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+//nombre->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
+        nombre->setStyleSheet(
+            "QPushButton{"
+                "color: lightgray;"
+                "background-color: #111111;"
+                "border: 1px solid red;"
+                "padding-left: 10px;"
+                "font-weight: bold;"
+                "text-align: left;"
+            "}"
+            "QPushButton:hover{"
+                "background-color: #000000;"
+            "}"
         );
-        layout->addWidget(etiqueta);
+        layout->addWidget(nombre);
         layout->setSpacing(5);
         layout->setContentsMargins(5, 5, 5, 5);
         layout->setAlignment(Qt::AlignTop);

@@ -1,5 +1,5 @@
 #include "charactersheetmanager.h"
-#include "ventanagregar.h"
+#include "ventanagregarACT.h"
 #include "./ui_charactersheetmanager.h"
 
 CharacterSheetManager::CharacterSheetManager(QWidget *parent)

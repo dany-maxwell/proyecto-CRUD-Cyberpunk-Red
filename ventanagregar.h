@@ -1,8 +1,7 @@
 #ifndef VENTANAGREGAR_H
 #define VENTANAGREGAR_H
-#include "Pesonaje.h"
 #include <QDialog>
-
+#include "charactersheetmanager.h"
 namespace Ui {
 class ventanAgregar;
 }
@@ -12,17 +11,19 @@ class ventanAgregar : public QDialog
     Q_OBJECT
 
 public:
-    explicit ventanAgregar(QWidget *parent = nullptr);
+    explicit ventanAgregar(CharacterSheetManager *manager, QWidget *parent = nullptr);
+
     ~ventanAgregar();
+    CharacterSheetManager* mainRef = nullptr;
 
 private:
     Ui::ventanAgregar *ui;
-    QList<Cyberpunk> personajes;
+    CharacterSheetManager *managerRef;
+
 private slots:
     void agregarPersonaje();
 
     void on_inteligenciaSpinBox_valueChanged(int arg1);
+    void on_Descartar_clicked();
 };
-
-
 #endif // VENTANAGREGAR_H

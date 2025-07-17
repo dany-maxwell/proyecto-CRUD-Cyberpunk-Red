@@ -55,6 +55,9 @@ border: none;
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{
 	background-color: #b4b4b4;
@@ -79,6 +82,9 @@ QPushButton:hover {
      <width>201</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{
@@ -2527,7 +2533,7 @@ font:7.5pt;
     </rect>
    </property>
   </widget>
-  <widget class="QSpinBox" name="vidaActualSpinBox_2">
+  <widget class="QSpinBox" name="vidaMaximaSpinBox">
    <property name="geometry">
     <rect>
      <x>516</x>
@@ -2758,7 +2764,7 @@ font:7pt;
     </rect>
    </property>
   </widget>
-  <widget class="QSpinBox" name="suerteSpinBox_2">
+  <widget class="QSpinBox" name="suerteMaximaSpinBox">
    <property name="geometry">
     <rect>
      <x>370</x>
@@ -2829,7 +2835,7 @@ font:7pt;
     </rect>
    </property>
   </widget>
-  <widget class="QSpinBox" name="empatiaSpinBox_2">
+  <widget class="QSpinBox" name="empatiaMaximaSpinBox">
    <property name="geometry">
     <rect>
      <x>370</x>

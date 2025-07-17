@@ -1,6 +1,8 @@
 D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/EWIEGA46WW/moc_ventanagregar.cpp: D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/ventanagregar.h \
   D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desktop_Qt_6_9_1_MinGW_64_bit-Debug/cyberpunk-red-character-sheet-managger_autogen/moc_predefs.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/QString \
+  D:/Qt/6.9.1/mingw_64/include/QtCore/QStringList \
+  D:/Qt/6.9.1/mingw_64/include/QtCore/QTextStream \
   D:/Qt/6.9.1/mingw_64/include/QtCore/q17memory.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/q20functional.h \
   D:/Qt/6.9.1/mingw_64/include/QtCore/q20iterator.h \
@@ -153,8 +155,11 @@ D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desk
   D:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.9.1/mingw_64/include/QtGui/qwindowdefs_win.h \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/QDialog \
+  D:/Qt/6.9.1/mingw_64/include/QtWidgets/QMainWindow \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/qdialog.h \
+  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qmainwindow.h \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/qsizepolicy.h \
+  D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtabwidget.h \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgets-config.h \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   D:/Qt/6.9.1/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -370,4 +375,5 @@ D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/build/Desk
   D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
-  D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/Pesonaje.h
+  D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/Pesonaje.h \
+  D:/Usuarios/Maxwell/Documentos/cyberpunk-red-character-sheet-managger/charactersheetmanager.h

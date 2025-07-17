@@ -1,12 +1,21 @@
 #include "charactersheetmanager.h"
 #include "ventanagregarACT.h"
 #include "./ui_charactersheetmanager.h"
+#include "Pesonaje.h"
+#include <QFile>
 
 CharacterSheetManager::CharacterSheetManager(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::CharacterSheetManager)
 {
     ui->setupUi(this);
+    if (personajes.size() == 0){
+        ui->LISTA->hide();
+    }
+    else{
+        ui->LISTA->show();
+    }
+    this->adjustSize();
 }
 
 CharacterSheetManager::~CharacterSheetManager()
@@ -16,8 +25,16 @@ CharacterSheetManager::~CharacterSheetManager()
 
 void CharacterSheetManager::on_Agregar_clicked()
 {
-    ventanAgregar *ventana = new ventanAgregar(this);
-    ventana->show();
+    ventanAgregar *ventana = new ventanAgregar(this, this);
+    ventana->mainRef = this;
+    ventana->exec();
+    if (personajes.size() == 0){
+        ui->LISTA->hide();
+    }
+    else{
+        ui->LISTA->show();
+    }
+    this->adjustSize();
 }
 
 
@@ -25,4 +42,56 @@ void CharacterSheetManager::on_Salir_clicked()
 {
     close();
 }
+
+void CharacterSheetManager::guardarPersonajesEnArchivo(const QString &rutaArchivo) {
+    QFile archivo(rutaArchivo);
+    if (archivo.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QTextStream out(&archivo);
+        for (int i = 0; i < personajes.size(); ++i){
+            out << personajes.at(i).serializar() << "\n";
+        }
+        archivo.close();
+    }
+}
+
+void CharacterSheetManager::cargarPersonajesDesdeArchivo(const QString &rutaArchivo) {
+    QFile archivo(rutaArchivo);
+    if (archivo.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        personajes.clear();
+        QTextStream in(&archivo);
+        while (!in.atEnd()) {
+            QString linea = in.readLine();
+            Cyberpunk personaje = Cyberpunk::deserializar(linea);
+            personajes.append(personaje);
+        }
+        archivo.close();
+    }
+}
+
+
+void CharacterSheetManager::agregarPersonaje(const Cyberpunk &nuevo) {
+    personajes.append(nuevo);
+}
+
+void CharacterSheetManager::agregarPersonajeEnLista(const Cyberpunk nou){
+    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->layoutlista->layout());
+    if (layout){
+        QLabel* etiqueta = new QLabel(nou.nombre);
+        etiqueta->setFixedHeight(30);
+        etiqueta->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        etiqueta->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
+        etiqueta->setStyleSheet(
+            "color: lightgray;"
+            "background-color: #111111;"
+            "border: 1px solid red;"
+            "padding-left: 10px;"
+            "font-weight: bold;"
+        );
+        layout->addWidget(etiqueta);
+        layout->setSpacing(5);
+        layout->setContentsMargins(5, 5, 5, 5);
+        layout->setAlignment(Qt::AlignTop);
+    }
+}
+
 

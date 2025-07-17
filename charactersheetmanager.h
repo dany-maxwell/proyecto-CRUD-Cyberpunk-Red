@@ -1,5 +1,7 @@
 #ifndef CHARACTERSHEETMANAGER_H
 #define CHARACTERSHEETMANAGER_H
+#include "Pesonaje.h"
+#include <QDialog>
 
 #include <QMainWindow>
 
@@ -16,6 +18,10 @@ class CharacterSheetManager : public QMainWindow
 public:
     CharacterSheetManager(QWidget *parent = nullptr);
     ~CharacterSheetManager();
+    void agregarPersonaje(const Cyberpunk &nuevo);
+    void guardarPersonajesEnArchivo(const QString &rutaArchivo);
+    void cargarPersonajesDesdeArchivo(const QString &rutaArchivo);
+    void agregarPersonajeEnLista(const Cyberpunk nou);
 
 private slots:
 
@@ -25,5 +31,7 @@ private slots:
 
 private:
     Ui::CharacterSheetManager *ui;
+    QList<Cyberpunk> personajes;
+
 };
 #endif // CHARACTERSHEETMANAGER_H

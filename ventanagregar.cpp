@@ -3,7 +3,8 @@
 #include "Pesonaje.h"
 #include "QMessageBox"
 #include "charactersheetmanager.h"
-
+#include <QScrollArea>
+#include <QVBoxLayout>
 
 ventanAgregar::ventanAgregar(QWidget *parent, CharacterSheetManager *main)
     : QDialog(parent)
@@ -11,6 +12,8 @@ ventanAgregar::ventanAgregar(QWidget *parent, CharacterSheetManager *main)
     , mainRef(main)
 {
     ui->setupUi(this);
+    this->setWindowFlags(Qt::Window | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint);
+
     QStringList rutas = {
         ":/img/imagenes/img31.jpg",
         ":/img/imagenes/img41.jpg",
@@ -47,6 +50,16 @@ ventanAgregar::ventanAgregar(QWidget *parent, CharacterSheetManager *main)
 
     this->adjustSize();
     connect(ui->Guardar, &QPushButton::clicked, this, &ventanAgregar::agregarPersonaje);
+
+    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->widget->layout());
+
+    if (layout) {
+        QLabel* ejemplo = new QLabel("Texto de prueba dentro del scroll");
+        layout->addWidget(ejemplo);
+    }
+
+    this->resize(this->size());
+    connect(ui->minimizarButton, &QPushButton::clicked, this, &QWidget::showMinimized);
 }
 
 

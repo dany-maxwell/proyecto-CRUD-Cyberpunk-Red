@@ -3,18 +3,52 @@
 #include "Pesonaje.h"
 #include "QMessageBox"
 #include "charactersheetmanager.h"
-#include <QString>
-#include <QDir>
 
-ventanAgregar::ventanAgregar(CharacterSheetManager *manager, QWidget *parent)
+
+ventanAgregar::ventanAgregar(QWidget *parent, CharacterSheetManager *main)
     : QDialog(parent)
     , ui(new Ui::ventanAgregar)
-    , managerRef(manager)
+    , mainRef(main)
 {
     ui->setupUi(this);
-    this->setFixedSize(this->size());
+    QStringList rutas = {
+        ":/img/imagenes/img31.jpg",
+        ":/img/imagenes/img41.jpg",
+        ":/img/imagenes/img51.jpg",
+        ":/img/imagenes/img61.jpg",
+        ":/img/imagenes/img75.jpg",
+        ":/img/imagenes/img85.jpg",
+        ":/img/imagenes/img95.jpg",
+        ":/img/imagenes/img105.jpg",
+        ":/img/imagenes/img115.jpg",
+        ":/img/imagenes/img127.jpg"
+    };
+    //para tener un texto antes de desplgar la lista de icons
+    ui->galeriaPersonajes_comboBox->addItem("Selecciona una imagen...");
+    ui->galeriaPersonajes_comboBox->setCurrentIndex(0);
+    //para mostrar las opciones, osea un salto a la posición 0
+    connect(ui->galeriaPersonajes_comboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [=](int index){
+        if (index == 0) return;
+
+        QString ruta = ui->galeriaPersonajes_comboBox->itemData(index, Qt::UserRole).toString();
+        if (!ruta.isEmpty()) {
+            QPixmap pix(ruta);
+            ui->iconPersonaje_label->setPixmap(pix.scaled(ui->iconPersonaje_label->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+        }
+    });
+
+    for (const QString &ruta : rutas) {
+        QIcon icono(ruta);
+        ui->galeriaPersonajes_comboBox->addItem(icono, "");
+        ui->galeriaPersonajes_comboBox->setItemData(ui->galeriaPersonajes_comboBox->count() - 1, ruta, Qt::UserRole); // para guardar la ruta
+    }
+
+    ui->galeriaPersonajes_comboBox->setIconSize(QSize(64, 64));
+
+    this->adjustSize();
     connect(ui->Guardar, &QPushButton::clicked, this, &ventanAgregar::agregarPersonaje);
 }
+
 
 ventanAgregar::~ventanAgregar()
 {
@@ -30,57 +64,28 @@ void ventanAgregar::agregarPersonaje() {
     Habilidad.frialdad = ui->frialdadSpinBox->value();
     Habilidad.voluntad = ui->voluntadSpinBox->value();
     Habilidad.suerte = ui->suerteSpinBox->value();
-    Habilidad.suerteMax = ui->suerteMaximaSpinBox->value();
     Habilidad.movimiento = ui->movilidadSpinBox->value();
     Habilidad.tipoCorporal = ui->tipo_corporalSpinBox->value();
-    Habilidad.empatia = ui->empatiaSpinBox->value();
-    Habilidad.empatiaMax = ui->empatiaMaximaSpinBox->value();
     Datos nuevo;
     nuevo.rol = ui->rolLineEdit->text();
-    nuevo.aptitudRol = ui->rolApt_lineEdit->text();
-    nuevo.humanidad = ui->humanidad_spinBox->value();
-    nuevo.rango = ui->rango_spinBox->value();
     Estado condicion;
-    condicion.vidaMaxima = ui->vidaMaximaSpinBox->value();
-    condicion.vidaActual = ui->vidaActualSpinBox->value();
-    condicion.armaduraCabeza = ui->Armadura1_lineEdit->text();
-    condicion.armaduraCuerpo = ui->Armadura2_lineEdit->text();
-    condicion.escudo = ui->Armadura3_lineEdit->text();
-    condicion.extra = ui->Armadura4_lineEdit->text();
-    condicion.salvacionMuerte = ui->svMuerte_spinBox->value();
-    condicion.gravedadHeridas = ui->heridas_spinBox->value();
-    condicion.heridasCriticas = ui->herCrit_textEdit->toPlainText();
-    condicion.adicciones = ui->Adicc_textEdit->toPlainText();
-    Armas arma_;
-    arma_.tipo = ui->Arma1_lineEdit->text();
-    arma_.daño = ui->Arma1d_lineEdit->text();
-    arma_.municion = ui->munic1_spinBox->value();
-    arma_.cdt = ui->cdt1_spinBox->value();
     Cyberpunk nuevoPersonaje;
     nuevoPersonaje.nombre = ui->nombreLineEdit->text();
     nuevoPersonaje.base=Habilidad;
     nuevoPersonaje.datos=nuevo;
     nuevoPersonaje.estado=condicion;
-    nuevoPersonaje.arma=arma_;
-    managerRef->agregarPersonaje(nuevoPersonaje);
-    QString ruta = QDir::homePath() + "/Documents/personajes.txt";
-    managerRef->guardarPersonajesEnArchivo(ruta);
+    personajes.append(nuevoPersonaje);
 
 
     QString resumen = "Personaje agregado exitosamente";
 
     QMessageBox::information(this, "Éxito", resumen);
 
-    mainRef->agregarPersonajeEnLista(nuevoPersonaje);
-    this->close();
 }
 
-void ventanAgregar::on_Descartar_clicked()
-{
-    close();
-}
 
-void ventanAgregar::on_inteligenciaSpinBox_valueChanged(int arg1)
+void ventanAgregar::on_Descartar_2_clicked()
 {
 
 }
+

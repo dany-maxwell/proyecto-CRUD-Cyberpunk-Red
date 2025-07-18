@@ -27,8 +27,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         imagenes.qrc
-        ventanagregarACT.h ventanagregarACT.cpp ventanagregarACT.ui
+        ventanagregar.h ventanagregar.cpp ventanagregar.ui
         Pesonaje.h
+
 
 
 

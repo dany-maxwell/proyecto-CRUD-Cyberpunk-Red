@@ -1,5 +1,5 @@
 #include "charactersheetmanager.h"
-#include "ventanagregarACT.h"
+#include "ventanagregar.h"
 #include "./ui_charactersheetmanager.h"
 #include "Pesonaje.h"
 #include <QFile>

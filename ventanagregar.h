@@ -22,7 +22,7 @@ private:
     QList<Cyberpunk> personajes;
 private slots:
     void agregarPersonaje();
-    void on_Descartar_2_clicked();
+    void on_Descartar_clicked();
 };
 
 

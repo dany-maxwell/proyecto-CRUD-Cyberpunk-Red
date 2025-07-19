@@ -25,9 +25,7 @@ public:
     void comprobarLista();
 
 private slots:
-
     void on_Agregar_clicked();
-
     void on_Salir_clicked();
 
 private:

@@ -27,11 +27,9 @@ struct Armas {
 struct Datos {
     QString rol;
     QString aptitudRol;
-    int nivelHabilidad;
     int humanidad;
     int puntosMejora;
     int rango;
-
 };
 
 struct Estado {
@@ -40,7 +38,6 @@ struct Estado {
     QString armaduraCabeza;
     QString armaduraCuerpo;
     QString escudo;
-    QString extra;
     int salvacionMuerte;
     int gravedadHeridas;
     QString heridasCriticas;
@@ -56,9 +53,7 @@ struct Cyberpunk {
     QString serializar() const {
         return nombre + "," +
                datos.rol + "," + datos.aptitudRol + "," +
-               QString::number(datos.nivelHabilidad) + "," +
                QString::number(datos.humanidad) + "," +
-               QString::number(datos.puntosMejora) + "," +
                QString::number(datos.rango) + "," +
 
                QString::number(base.inteligencia) + "," +
@@ -79,7 +74,6 @@ struct Cyberpunk {
                estado.armaduraCabeza + "," +
                estado.armaduraCuerpo + "," +
                estado.escudo + "," +
-               estado.extra + "," +
                QString::number(estado.salvacionMuerte) + "," +
                QString::number(estado.gravedadHeridas) + "," +
                estado.heridasCriticas + "," +
@@ -100,7 +94,6 @@ struct Cyberpunk {
         c.nombre = p[i++];
         c.datos.rol = p[i++];
         c.datos.aptitudRol = p[i++];
-        c.datos.nivelHabilidad = p[i++].toInt();
         c.datos.humanidad = p[i++].toInt();
         c.datos.puntosMejora = p[i++].toInt();
         c.datos.rango = p[i++].toInt();
@@ -123,7 +116,6 @@ struct Cyberpunk {
         c.estado.armaduraCabeza = p[i++];
         c.estado.armaduraCuerpo = p[i++];
         c.estado.escudo = p[i++];
-        c.estado.extra = p[i++];
         c.estado.salvacionMuerte = p[i++].toInt();
         c.estado.gravedadHeridas = p[i++].toInt();
         c.estado.heridasCriticas = p[i++];

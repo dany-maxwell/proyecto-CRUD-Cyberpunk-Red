@@ -3,8 +3,13 @@
 #include "Pesonaje.h"
 #include "QMessageBox"
 #include "charactersheetmanager.h"
+<<<<<<< HEAD
 #include <QScrollArea>
 #include <QVBoxLayout>
+=======
+#include <QDir>
+
+>>>>>>> main
 
 ventanAgregar::ventanAgregar(QWidget *parent, CharacterSheetManager *main)
     : QDialog(parent)
@@ -69,36 +74,52 @@ ventanAgregar::~ventanAgregar()
 }
 
 void ventanAgregar::agregarPersonaje() {
-    Estadisticas Habilidad;
-    Habilidad.inteligencia = ui->inteligenciaSpinBox->value();
-    Habilidad.reflejos = ui->reflejosSpinBox->value();
-    Habilidad.destreza = ui->destrezaSpinBox->value();
-    Habilidad.tecnica = ui->tecnicaSpinBox->value();
-    Habilidad.frialdad = ui->frialdadSpinBox->value();
-    Habilidad.voluntad = ui->voluntadSpinBox->value();
-    Habilidad.suerte = ui->suerteSpinBox->value();
-    Habilidad.movimiento = ui->movilidadSpinBox->value();
-    Habilidad.tipoCorporal = ui->tipo_corporalSpinBox->value();
+    Estadisticas skill;
+    skill.inteligencia = ui->inteligenciaSpinBox->value();
+    skill.reflejos = ui->reflejosSpinBox->value();
+    skill.destreza = ui->destrezaSpinBox->value();
+    skill.tecnica = ui->tecnicaSpinBox->value();
+    skill.frialdad = ui->frialdadSpinBox->value();
+    skill.voluntad = ui->voluntadSpinBox->value();
+    skill.suerteMax = ui->suerteSpinBox_2->value();
+    skill.suerte = skill.suerteMax;
+    skill.movimiento = ui->movilidadSpinBox->value();
+    skill.tipoCorporal = ui->tipo_corporalSpinBox->value();
+    skill.empatiaMax = ui->empatiaSpinBox_2->value();
+    skill.empatia=skill.empatiaMax;
     Datos nuevo;
     nuevo.rol = ui->rolLineEdit->text();
+    nuevo.rango = ui->rango_spinBox->value();
+    nuevo.humanidad = skill.empatiaMax*10;
     Estado condicion;
+    condicion.vidaMaxima = (skill.voluntad+skill.tipoCorporal)*5;
+    condicion.vidaActual = condicion.vidaMaxima;
+    //condicion.heridasCriticas = ui->herCrit_textEdit->text();
+    condicion.salvacionMuerte = skill.tipoCorporal;
+    condicion.gravedadHeridas = ui->heridas_spinBox->value();
+    //condicion.adicciones = ui->Adicc_textEdit->text();
+    Armas nou_arma;
+    nou_arma.tipo = ui->Arma1_lineEdit->text();
+    nou_arma.daño = ui->Arma1d_lineEdit->text();
+    nou_arma.municion = ui->munic1_spinBox->value();
+    nou_arma.cdt = ui->cdt1_spinBox->value();
     Cyberpunk nuevoPersonaje;
     nuevoPersonaje.nombre = ui->nombreLineEdit->text();
-    nuevoPersonaje.base=Habilidad;
+    nuevoPersonaje.base=skill;
     nuevoPersonaje.datos=nuevo;
     nuevoPersonaje.estado=condicion;
-    personajes.append(nuevoPersonaje);
-
-
+    nuevoPersonaje.arma=nou_arma;
+    mainRef->agregarPersonaje(nuevoPersonaje);
+    QString ruta = QDir::homePath() + "/Documents/personajes.txt";
+    mainRef->guardarPersonajesEnArchivo(ruta);
     QString resumen = "Personaje agregado exitosamente";
-
     QMessageBox::information(this, "Éxito", resumen);
 
+    mainRef->agregarPersonajeEnLista(nuevoPersonaje);
+    this->close();
 }
 
-
-void ventanAgregar::on_Descartar_2_clicked()
+void ventanAgregar::on_Descartar_clicked()
 {
-
+    close();
 }
-

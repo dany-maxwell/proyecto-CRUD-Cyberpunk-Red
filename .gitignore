@@ -1,46 +1,51 @@
-# Archivos de CMake
+#General
+*.autosave
+*.swp
+*.bak
+*.tmp
+*~
+#QT creator
+*.pro.user*
+*.qbs.user*
+*.creator.*
+*.user
+*.sln
+*.ncb
+*.suo
+*.VC.db
+*.VC.opendb
+#QT build
+build*/
+build-*/
+#CMake
 CMakeFiles/
-CMakeFiles/*
-cmake_install.cmake
 CMakeCache.txt
-#Carpetas adicionales de compilacion
-debug/
-release/
-#Archivos IDE
-.idea/
-.vscode/
-#Archivos de dependencias de Qt
-*.qrc.depends
-# Qt / C++ build files
+cmake_install.cmake
+Makefile
+install_manifest.txt
+#Compilacion
 *.o
 *.obj
-*.exe
-*.user
-*.user.*
-*.pro.user
-build-*/
-Makefile
-Makefile*
-build/
-build/*
-*.autosave
-# Archivo de registro 
-CMakeConfigureLog.yaml
-
-# Qt Creator config
-*.qmake.stash
-*.directory
-*.so
-*.dll
+*.lo
+*.la
 *.a
-*.moc
 *.lib
-*.config
-*.creator.*
-*.creator
-*.bak
-*~
-*.swp
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+*.out
+*.app
+#QT headers
+moc_*
+ui_*
+qrc_*
+#logs / misc
 *.log
-*.tmp
-out/
+*.orig
+*.rej
+*.patch
+#sistema
+.DS_Store
+Thumbs.db

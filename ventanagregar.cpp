@@ -3,13 +3,9 @@
 #include "Pesonaje.h"
 #include "QMessageBox"
 #include "charactersheetmanager.h"
-<<<<<<< HEAD
 #include <QScrollArea>
 #include <QVBoxLayout>
-=======
 #include <QDir>
-
->>>>>>> main
 
 ventanAgregar::ventanAgregar(QWidget *parent, CharacterSheetManager *main)
     : QDialog(parent)
@@ -85,7 +81,7 @@ void ventanAgregar::agregarPersonaje() {
     skill.suerte = skill.suerteMax;
     skill.movimiento = ui->movilidadSpinBox->value();
     skill.tipoCorporal = ui->tipo_corporalSpinBox->value();
-    skill.empatiaMax = ui->empatiaSpinBox_2->value();
+    skill.empatiaMax = ui->empatiaSpinBox->value();
     skill.empatia=skill.empatiaMax;
     Datos nuevo;
     nuevo.rol = ui->rolLineEdit->text();

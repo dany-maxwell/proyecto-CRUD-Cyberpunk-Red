@@ -3,12 +3,15 @@
 #include "./ui_charactersheetmanager.h"
 #include "Pesonaje.h"
 #include <QFile>
+#include <QDir>
 
 CharacterSheetManager::CharacterSheetManager(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::CharacterSheetManager)
 {
     ui->setupUi(this);
+    QString ruta = QDir::homePath() + "/Documents/personajes.txt";
+    cargarPersonajesDesdeArchivo(ruta);
     comprobarLista();
 }
 
@@ -61,6 +64,7 @@ void CharacterSheetManager::cargarPersonajesDesdeArchivo(const QString &rutaArch
             QString linea = in.readLine();
             Cyberpunk personaje = Cyberpunk::deserializar(linea);
             personajes.append(personaje);
+            agregarPersonajeEnLista(personaje);
         }
         archivo.close();
     }
@@ -74,7 +78,7 @@ void CharacterSheetManager::agregarPersonaje(const Cyberpunk &nuevo) {
 void CharacterSheetManager::agregarPersonajeEnLista(const Cyberpunk nou){
     QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->layoutlista->layout());
     if (layout){
-        QPushButton* nombre = new QPushButton(nou.nombre+" "+ nou.datos.rol);
+        QPushButton* nombre = new QPushButton(nou.datos.nombre+" "+ nou.datos.rol);
         nombre->setFixedHeight(30);
         nombre->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
 //nombre->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);

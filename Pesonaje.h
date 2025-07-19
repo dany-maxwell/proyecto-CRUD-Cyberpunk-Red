@@ -25,6 +25,7 @@ struct Armas {
     int cdt;
 };
 struct Datos {
+    QString nombre;
     QString rol;
     QString aptitudRol;
     int humanidad;
@@ -35,23 +36,38 @@ struct Datos {
 struct Estado {
     int vidaMaxima;
     int vidaActual;
-    QString armaduraCabeza;
-    QString armaduraCuerpo;
-    QString escudo;
     int salvacionMuerte;
     int gravedadHeridas;
     QString heridasCriticas;
     QString adicciones;
+    QString armaduraCabeza;
+    QString armaduraCuerpo;
+    int proteccionCabeza;
+    int proteccionCuerpo;
+    QString escudo;
+    int proteccionEscudo;
+    QString penCabeza;
+    QString penCuerpo;
+    QString penEscudo;
+};
+
+struct Cyberware {
+    QString cyberware1;
+    QString cyberware2;
+    QString cyberware3;
+    QString cyberware4;
+    QString cyberware5;
 };
 
 struct Cyberpunk {
-    QString nombre;
     Datos datos;
     Estadisticas base;
     Estado estado;
     Armas arma;
+    Armas arma2;
+    Cyberware cyberware;
     QString serializar() const {
-        return nombre + "," +
+        return datos.nombre + "," +
                datos.rol + "," + datos.aptitudRol + "," +
                QString::number(datos.humanidad) + "," +
                QString::number(datos.rango) + "," +
@@ -71,31 +87,46 @@ struct Cyberpunk {
 
                QString::number(estado.vidaMaxima) + "," +
                QString::number(estado.vidaActual) + "," +
-               estado.armaduraCabeza + "," +
-               estado.armaduraCuerpo + "," +
-               estado.escudo + "," +
                QString::number(estado.salvacionMuerte) + "," +
                QString::number(estado.gravedadHeridas) + "," +
                estado.heridasCriticas + "," +
                estado.adicciones + "," +
+               estado.armaduraCabeza + "," +
+               QString::number(estado.proteccionCabeza) + "," +
+               estado.penCabeza + "," +
+               estado.armaduraCuerpo + "," +
+               QString::number(estado.proteccionCuerpo) + "," +
+               estado.penCuerpo + "," +
+               estado.escudo + "," +
+               QString::number(estado.proteccionEscudo) + "," +
+               estado.penEscudo + "," +
 
                arma.tipo + "," + arma.daño + "," +
                QString::number(arma.municion) + "," +
-               QString::number(arma.cdt);
+               QString::number(arma.cdt) + "," +
+               arma2.tipo + "," + arma2.daño + "," +
+               QString::number(arma2.municion) + "," +
+               QString::number(arma2.cdt) + "," +
+
+               cyberware.cyberware1 + "," +
+               cyberware.cyberware2 + "," +
+               cyberware.cyberware3 + "," +
+               cyberware.cyberware4 + "," +
+               cyberware.cyberware5;
     }
 
     static Cyberpunk deserializar(const QString &linea) {
         QStringList p = linea.split(",");
-        if (p.size() < 38) return {};
+        if (p.size() < 39) return {};
 
         Cyberpunk c;
         int i = 0;
 
-        c.nombre = p[i++];
+        c.datos.nombre = p[i++];
         c.datos.rol = p[i++];
         c.datos.aptitudRol = p[i++];
         c.datos.humanidad = p[i++].toInt();
-        c.datos.puntosMejora = p[i++].toInt();
+        //c.datos.puntosMejora = p[i++].toInt();
         c.datos.rango = p[i++].toInt();
 
         c.base.inteligencia = p[i++].toInt();
@@ -126,6 +157,16 @@ struct Cyberpunk {
         c.arma.municion = p[i++].toInt();
         c.arma.cdt = p[i++].toInt();
 
+        c.arma2.tipo = p[i++];
+        c.arma2.daño = p[i++];
+        c.arma2.municion = p[i++].toInt();
+        c.arma2.cdt = p[i++].toInt();
+
+        c.cyberware.cyberware1 = p[i++];
+        c.cyberware.cyberware2 = p[i++];
+        c.cyberware.cyberware3 = p[i++];
+        c.cyberware.cyberware4 = p[i++];
+        c.cyberware.cyberware5 = p[i++];
         return c;
     }
 };

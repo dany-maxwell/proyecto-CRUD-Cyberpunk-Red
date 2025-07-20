@@ -79,15 +79,17 @@ void ventanAgregar::agregarPersonaje() {
     skill.voluntad = ui->voluntadSpinBox->value();
     skill.suerteMax = ui->suerteSpinBox_2->value();
     skill.suerte = skill.suerteMax;
+    ui->suerteSpinBox->setValue(skill.suerte);
     skill.movimiento = ui->movilidadSpinBox->value();
     skill.tipoCorporal = ui->tipo_corporalSpinBox->value();
     skill.empatiaMax = ui->empatiaSpinBox->value();
-    skill.empatia=skill.empatiaMax;
     Datos nuevo;
     nuevo.nombre = ui->nombreLineEdit->text();
     nuevo.rol = ui->rolLineEdit->text();
+    nuevo.aptitudRol = ui->rolApt_lineEdit->text();
     nuevo.rango = ui->rango_spinBox->value();
     nuevo.humanidad = skill.empatiaMax*10;
+    skill.empatia=nuevo.humanidad/10;
     Estado condicion;
     condicion.vidaMaxima = (skill.voluntad+skill.tipoCorporal)*5;
     condicion.vidaActual = condicion.vidaMaxima;

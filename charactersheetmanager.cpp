@@ -109,6 +109,7 @@ void CharacterSheetManager::agregarPersonajeEnLista(const Cyberpunk nou){
 
 void CharacterSheetManager::abrirVentanaEditar(){
     QPushButton *botn = qobject_cast<QPushButton*>(sender());
-    ventanaEditar *ventana = new ventanaEditar(botn, this);
+    QString nombre = botn->property("nombre").toString();
+    ventanaEditar *ventana = new ventanaEditar(nombre, personajes, this);
     ventana->show();
 }

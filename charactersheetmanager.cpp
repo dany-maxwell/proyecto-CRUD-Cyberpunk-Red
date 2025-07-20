@@ -1,9 +1,13 @@
 #include "charactersheetmanager.h"
 #include "ventanagregar.h"
+#include "ventanaeditar.h"
 #include "./ui_charactersheetmanager.h"
 #include "Pesonaje.h"
 #include <QFile>
 #include <QDir>
+#include <QObject>
+#include <QPushButton>
+#include <QDebug>
 
 CharacterSheetManager::CharacterSheetManager(QWidget *parent)
     : QMainWindow(parent)
@@ -78,11 +82,11 @@ void CharacterSheetManager::agregarPersonaje(const Cyberpunk &nuevo) {
 void CharacterSheetManager::agregarPersonajeEnLista(const Cyberpunk nou){
     QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->layoutlista->layout());
     if (layout){
-        QPushButton* nombre = new QPushButton(nou.datos.nombre+" "+ nou.datos.rol);
-        nombre->setFixedHeight(30);
-        nombre->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-//nombre->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
-        nombre->setStyleSheet(
+        QPushButton* personaje = new QPushButton(nou.datos.nombre+" "+ nou.datos.rol);
+        personaje->setProperty("nombre",nou.datos.nombre);
+        personaje->setFixedHeight(30);
+        personaje->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        personaje->setStyleSheet(
             "QPushButton{"
                 "color: lightgray;"
                 "background-color: #111111;"
@@ -95,11 +99,16 @@ void CharacterSheetManager::agregarPersonajeEnLista(const Cyberpunk nou){
                 "background-color: #000000;"
             "}"
         );
-        layout->addWidget(nombre);
+        connect(personaje, &QPushButton::clicked, this, &CharacterSheetManager::abrirVentanaEditar);
+        layout->addWidget(personaje);
         layout->setSpacing(5);
         layout->setContentsMargins(5, 5, 5, 5);
         layout->setAlignment(Qt::AlignTop);
     }
 }
 
-
+void CharacterSheetManager::abrirVentanaEditar(){
+    QPushButton *botn = qobject_cast<QPushButton*>(sender());
+    ventanaEditar *ventana = new ventanaEditar(botn, this);
+    ventana->show();
+}

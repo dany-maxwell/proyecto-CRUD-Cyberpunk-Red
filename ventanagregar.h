@@ -16,10 +16,11 @@ public:
     explicit ventanAgregar(QWidget *parent = nullptr, CharacterSheetManager *main = nullptr);
     ~ventanAgregar();
     CharacterSheetManager* mainRef;
+    QList<Cyberpunk> personajes;
 
 private:
     Ui::ventanAgregar *ui;
-    QList<Cyberpunk> personajes;
+    //QList<Cyberpunk> personajes;
 private slots:
     void agregarPersonaje();
     void on_Descartar_clicked();

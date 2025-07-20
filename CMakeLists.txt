@@ -29,6 +29,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         imagenes.qrc
         ventanagregar.h ventanagregar.cpp ventanagregar.ui
         Pesonaje.h
+        ventanaeditar.h ventanaeditar.cpp ventanaeditar.ui
 
 
 

@@ -27,6 +27,7 @@ public:
 private slots:
     void on_Agregar_clicked();
     void on_Salir_clicked();
+    void abrirVentanaEditar();
 
 private:
     Ui::CharacterSheetManager *ui;

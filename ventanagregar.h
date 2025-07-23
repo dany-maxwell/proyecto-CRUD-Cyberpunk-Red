@@ -24,6 +24,11 @@ private:
 private slots:
     void agregarPersonaje();
     void on_Descartar_clicked();
+    void actualizarAptRol();
+    void on_suerteMax_SpinBox_valueChanged(int suerteMax);
+    void on_empatiaMax_SpinBox_valueChanged(int empMax);
+    void on_voluntadSpinBox_valueChanged(int voluntad);
+    void on_tipo_corporalSpinBox_valueChanged(int tipoCorporal);
 };
 
 

@@ -216,7 +216,7 @@ QPushButton:hover {
             </rect>
            </property>
           </widget>
-          <widget class="QSpinBox" name="suerteSpinBox_2">
+          <widget class="QSpinBox" name="suerteMax_SpinBox">
            <property name="geometry">
             <rect>
              <x>40</x>
@@ -239,8 +239,8 @@ QPushButton:hover {
           <widget class="QLabel" name="empatia_label">
            <property name="geometry">
             <rect>
-             <x>12</x>
-             <y>561</y>
+             <x>0</x>
+             <y>560</y>
              <width>21</width>
              <height>20</height>
             </rect>
@@ -275,21 +275,11 @@ QPushButton:hover {
             </rect>
            </property>
           </widget>
-          <widget class="QSpinBox" name="empatiaSpinBox">
+          <widget class="QSpinBox" name="empatiaMax_SpinBox">
            <property name="geometry">
             <rect>
-             <x>39</x>
+             <x>40</x>
              <y>555</y>
-             <width>31</width>
-             <height>30</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QSpinBox" name="suerteSpinBox">
-           <property name="geometry">
-            <rect>
-             <x>9</x>
-             <y>380</y>
              <width>31</width>
              <height>30</height>
             </rect>
@@ -667,6 +657,25 @@ font-weight: bold;</string>
             <set>Qt::AlignmentFlag::AlignCenter</set>
            </property>
           </widget>
+          <widget class="QLabel" name="suerteAct_label">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>390</y>
+             <width>21</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 9pt;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTop|Qt::AlignmentFlag::AlignTrailing</set>
+           </property>
+          </widget>
          </widget>
          <widget class="QWidget" name="widget_3" native="true">
           <property name="geometry">
@@ -933,16 +942,6 @@ font: 7.6pt;</string>
             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
-          <widget class="QLineEdit" name="rolApt_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>2</x>
-             <y>424</y>
-             <width>165</width>
-             <height>28</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLineEdit" name="nombreLineEdit">
            <property name="geometry">
             <rect>
@@ -953,21 +952,11 @@ font: 7.6pt;</string>
             </rect>
            </property>
           </widget>
-          <widget class="QSpinBox" name="rango_spinBox">
-           <property name="geometry">
-            <rect>
-             <x>192</x>
-             <y>424</y>
-             <width>44</width>
-             <height>29</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLabel" name="humanidad_label">
            <property name="geometry">
             <rect>
-             <x>7</x>
-             <y>488</y>
+             <x>0</x>
+             <y>490</y>
              <width>100</width>
              <height>20</height>
             </rect>
@@ -982,21 +971,11 @@ font: 7.6pt;</string>
             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
-          <widget class="QLineEdit" name="rolLineEdit">
+          <widget class="QLabel" name="punto_label">
            <property name="geometry">
             <rect>
-             <x>4</x>
-             <y>365</y>
-             <width>220</width>
-             <height>28</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_68">
-           <property name="geometry">
-            <rect>
-             <x>160</x>
-             <y>488</y>
+             <x>150</x>
+             <y>490</y>
              <width>63</width>
              <height>20</height>
             </rect>
@@ -1010,6 +989,109 @@ font: 7.6pt;</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="aptRol_label">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>430</y>
+             <width>161</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="QComboBox" name="rol_comboBox">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>363</y>
+             <width>221</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Rockero</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Mercenario</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Netrunner</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Técnico</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>TecnoMédico</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Periodista</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Corpo</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Policía</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Fixer</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Nómada</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QLabel" name="rango_label">
+           <property name="geometry">
+            <rect>
+             <x>200</x>
+             <y>430</y>
+             <width>44</width>
+             <height>29</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 12pt;</string>
+           </property>
+           <property name="text">
+            <string>4</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
            </property>
           </widget>
          </widget>
@@ -1325,26 +1407,6 @@ font-weight: bold;</string>
             <set>Qt::AlignmentFlag::AlignCenter</set>
            </property>
           </widget>
-          <widget class="QSpinBox" name="heridas_spinBox">
-           <property name="geometry">
-            <rect>
-             <x>105</x>
-             <y>88</y>
-             <width>51</width>
-             <height>35</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QSpinBox" name="svMuerte_spinBox">
-           <property name="geometry">
-            <rect>
-             <x>24</x>
-             <y>88</y>
-             <width>51</width>
-             <height>35</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QSpinBox" name="cdt1_spinBox">
            <property name="geometry">
             <rect>
@@ -1355,7 +1417,7 @@ font-weight: bold;</string>
             </rect>
            </property>
           </widget>
-          <widget class="QLabel" name="vidaActual_label_2">
+          <widget class="QLabel" name="vidaMax_label">
            <property name="geometry">
             <rect>
              <x>103</x>
@@ -1614,7 +1676,7 @@ font:8.7pt;
 font-weight: bold;</string>
            </property>
            <property name="text">
-            <string>ALT FIRE</string>
+            <string>RANGO</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1708,16 +1770,6 @@ font-weight: bold;</string>
             </rect>
            </property>
           </widget>
-          <widget class="QLineEdit" name="Alt2_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>245</x>
-             <y>232</y>
-             <width>82</width>
-             <height>16</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLineEdit" name="Arma1d_lineEdit">
            <property name="geometry">
             <rect>
@@ -1757,16 +1809,6 @@ font: 12pt;
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="Alt1_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>245</x>
-             <y>209</y>
-             <width>82</width>
-             <height>16</height>
-            </rect>
            </property>
           </widget>
           <widget class="QLabel" name="label_85">
@@ -1950,6 +1992,64 @@ font-weight: bold;</string>
              <y>30</y>
              <width>141</width>
              <height>31</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLabel" name="svMuerte_label">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>100</y>
+             <width>51</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 12pt;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="heridas_label">
+           <property name="geometry">
+            <rect>
+             <x>100</x>
+             <y>100</y>
+             <width>51</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 12pt;</string>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="armaRango_spinBox">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>210</y>
+             <width>41</width>
+             <height>20</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="arma2Rango_spinBox">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>230</y>
+             <width>41</width>
+             <height>20</height>
             </rect>
            </property>
           </widget>

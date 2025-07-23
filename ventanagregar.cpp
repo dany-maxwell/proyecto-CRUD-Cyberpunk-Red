@@ -61,8 +61,21 @@ ventanAgregar::ventanAgregar(QWidget *parent, CharacterSheetManager *main)
 
     this->resize(this->size());
     connect(ui->minimizarButton, &QPushButton::clicked, this, &QWidget::showMinimized);
+    connect(ui->rol_comboBox, &QComboBox::currentIndexChanged, this, &ventanAgregar::actualizarAptRol);
 }
 
+QMap<QString, QString> RolesyAptRol = {
+    {"Rockero","Impacto Carismático"},
+    {"Mercenario","Conciencia de Combate"},
+    {"Netrunner","Interface"},
+    {"Técnico","Manipulación"},
+    {"TecnoMédico","Medicina"},
+    {"Periodista","Credibilidad"},
+    {"Corpo","Recursos"},
+    {"Policía","Apoyo"},
+    {"Fixer","Gestión"},
+    {"Nómada","Motor"}
+};
 
 ventanAgregar::~ventanAgregar()
 {
@@ -77,25 +90,25 @@ void ventanAgregar::agregarPersonaje() {
     skill.tecnica = ui->tecnicaSpinBox->value();
     skill.frialdad = ui->frialdadSpinBox->value();
     skill.voluntad = ui->voluntadSpinBox->value();
-    skill.suerteMax = ui->suerteSpinBox_2->value();
-    skill.suerte = skill.suerteMax;
-    ui->suerteSpinBox->setValue(skill.suerte);
+    skill.suerteMax = ui->suerteMax_SpinBox->value();
+    skill.suerte = ui->suerteAct_label->text().toInt();
     skill.movimiento = ui->movilidadSpinBox->value();
     skill.tipoCorporal = ui->tipo_corporalSpinBox->value();
-    skill.empatiaMax = ui->empatiaSpinBox->value();
+    skill.empatiaMax = ui->empatiaMax_SpinBox->value();
+    skill.empatia = ui->empatia_label->text().toInt();
     Datos nuevo;
     nuevo.nombre = ui->nombreLineEdit->text();
-    nuevo.rol = ui->rolLineEdit->text();
-    nuevo.aptitudRol = ui->rolApt_lineEdit->text();
-    nuevo.rango = ui->rango_spinBox->value();
-    nuevo.humanidad = skill.empatiaMax*10;
-    skill.empatia=nuevo.humanidad/10;
+    nuevo.rol = ui->rol_comboBox->currentText();
+    nuevo.aptitudRol = ui->aptRol_label->text();
+    nuevo.rango = ui->rango_label->text().toInt();
+    nuevo.humanidad = ui->humanidad_label->text().toInt();
+    nuevo.puntosMejora = ui->punto_label->text().toInt();
     Estado condicion;
-    condicion.vidaMaxima = (skill.voluntad+skill.tipoCorporal)*5;
-    condicion.vidaActual = condicion.vidaMaxima;
+    condicion.vidaMaxima = ui->vidaMax_label->text().toInt();
+    condicion.vidaActual = ui->vidaActual_label->text().toInt();
     condicion.heridasCriticas = ui->herCrit_lineedit->text();
-    condicion.salvacionMuerte = skill.tipoCorporal;
-    condicion.gravedadHeridas = ui->heridas_spinBox->value();
+    condicion.salvacionMuerte = ui->svMuerte_label->text().toInt();
+    condicion.gravedadHeridas = ui->heridas_label->text().toInt();
     condicion.adicciones = ui->Adicc_lineedit->text();
     condicion.armaduraCabeza = ui->Armadura1_lineEdit->text();
     condicion.armaduraCuerpo = ui->Armadura2_lineEdit->text();
@@ -111,11 +124,13 @@ void ventanAgregar::agregarPersonaje() {
     nou_arma1.daño = ui->Arma1d_lineEdit->text();
     nou_arma1.municion = ui->munic1_spinBox->value();
     nou_arma1.cdt = ui->cdt1_spinBox->value();
+    nou_arma1.armaRango = ui->armaRango_spinBox->value();
     Armas nou_arma2;
     nou_arma2.tipo = ui->Arma2_lineEdit->text();
     nou_arma2.daño = ui->Arma2d_lineEdit->text();
     nou_arma2.municion = ui->munic2_spinBox->value();
     nou_arma2.cdt = ui->cdt2_spinBox->value();
+    nou_arma2.armaRango = ui->arma2Rango_spinBox->value();
     Cyberware lcyberware;
     lcyberware.cyberware1 = ui->ciber_lineEdit->text();
     lcyberware.cyberware2 = ui->ciber_lineEdit_2->text();
@@ -129,13 +144,13 @@ void ventanAgregar::agregarPersonaje() {
     nuevoPersonaje.arma=nou_arma1;
     nuevoPersonaje.arma2=nou_arma2;
     nuevoPersonaje.cyberware=lcyberware;
+
     mainRef->agregarPersonaje(nuevoPersonaje);
     QString ruta = QDir::homePath() + "/Documents/personajes.txt";
     mainRef->guardarPersonajesEnArchivo(ruta);
     QString resumen = "Personaje agregado exitosamente";
     QMessageBox::information(this, "Éxito", resumen);
 
-    mainRef->agregarPersonajeEnLista(nuevoPersonaje);
     this->close();
 }
 
@@ -143,3 +158,42 @@ void ventanAgregar::on_Descartar_clicked()
 {
     close();
 }
+
+void ventanAgregar::actualizarAptRol(){
+    QString rolSeleccionado = ui->rol_comboBox->currentText();
+    QString aptRol = RolesyAptRol.value(rolSeleccionado,"");
+    ui->aptRol_label->setText(aptRol);
+}
+
+void ventanAgregar::on_suerteMax_SpinBox_valueChanged(int suerteMax)
+{
+    ui->suerteAct_label->setText(QString::number(suerteMax));
+}
+
+
+void ventanAgregar::on_empatiaMax_SpinBox_valueChanged(int empMax)
+{
+    int humanidad=empMax * 10;
+    ui->humanidad_label->setText(QString::number(humanidad));
+    ui->empatia_label->setText(QString::number(empMax));
+}
+
+
+void ventanAgregar::on_voluntadSpinBox_valueChanged(int voluntad)
+{
+    int tipoCorporal = ui->tipo_corporalSpinBox->value();
+    int vidaMax = (voluntad + tipoCorporal)*10;
+    ui->vidaMax_label->setText(QString::number(vidaMax));
+    ui->vidaActual_label->setText(QString::number(vidaMax));
+}
+
+
+void ventanAgregar::on_tipo_corporalSpinBox_valueChanged(int tipoCorporal)
+{
+    int voluntad = ui->voluntadSpinBox->value();
+    int vidaMax = (tipoCorporal + voluntad)*10;
+    ui->vidaMax_label->setText(QString::number(vidaMax));
+    ui->vidaActual_label->setText(QString::number(vidaMax));
+    ui->svMuerte_label->setText(QString::number(tipoCorporal));
+}
+

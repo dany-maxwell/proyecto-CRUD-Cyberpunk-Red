@@ -23,6 +23,7 @@ struct Armas {
     QString daño;
     int municion;
     int cdt;
+    int armaRango;
 };
 struct Datos {
     QString nombre;
@@ -69,8 +70,9 @@ struct Cyberpunk {
     QString serializar() const {
         return datos.nombre + "," +
                datos.rol + "," + datos.aptitudRol + "," +
-               QString::number(datos.humanidad) + "," +
                QString::number(datos.rango) + "," +
+               QString::number(datos.puntosMejora) + "," +
+               QString::number(datos.humanidad) + "," +
 
                QString::number(base.inteligencia) + "," +
                QString::number(base.reflejos) + "," +
@@ -104,9 +106,11 @@ struct Cyberpunk {
                arma.tipo + "," + arma.daño + "," +
                QString::number(arma.municion) + "," +
                QString::number(arma.cdt) + "," +
+               QString::number(arma.armaRango) + "," +
                arma2.tipo + "," + arma2.daño + "," +
                QString::number(arma2.municion) + "," +
                QString::number(arma2.cdt) + "," +
+               QString::number(arma2.armaRango) + "," +
 
                cyberware.cyberware1 + "," +
                cyberware.cyberware2 + "," +
@@ -117,7 +121,7 @@ struct Cyberpunk {
 
     static Cyberpunk deserializar(const QString &linea) {
         QStringList p = linea.split(",");
-        if (p.size() < 39) return {};
+        if (p.size() < 48) return {};
 
         Cyberpunk c;
         int i = 0;
@@ -126,7 +130,7 @@ struct Cyberpunk {
         c.datos.rol = p[i++];
         c.datos.aptitudRol = p[i++];
         c.datos.humanidad = p[i++].toInt();
-        //c.datos.puntosMejora = p[i++].toInt();
+        c.datos.puntosMejora = p[i++].toInt();
         c.datos.rango = p[i++].toInt();
 
         c.base.inteligencia = p[i++].toInt();
@@ -156,11 +160,13 @@ struct Cyberpunk {
         c.arma.daño = p[i++];
         c.arma.municion = p[i++].toInt();
         c.arma.cdt = p[i++].toInt();
+        c.arma.armaRango = p[i++].toInt();
 
         c.arma2.tipo = p[i++];
         c.arma2.daño = p[i++];
         c.arma2.municion = p[i++].toInt();
         c.arma2.cdt = p[i++].toInt();
+        c.arma2.armaRango = p[i++].toInt();
 
         c.cyberware.cyberware1 = p[i++];
         c.cyberware.cyberware2 = p[i++];

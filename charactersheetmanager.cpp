@@ -17,6 +17,7 @@ CharacterSheetManager::CharacterSheetManager(QWidget *parent)
     QString ruta = QDir::homePath() + "/Documents/personajes.txt";
     cargarPersonajesDesdeArchivo(ruta);
     comprobarLista();
+    connect(ui->listaPersonajes, &QListWidget::itemClicked,this, &CharacterSheetManager::abrirVentanaEditar);
 }
 
 CharacterSheetManager::~CharacterSheetManager()
@@ -29,6 +30,7 @@ void CharacterSheetManager::comprobarLista(){
         ui->LISTA->hide();
     }
     else{
+        crearLista();
         ui->LISTA->show();
     }
     this->adjustSize();
@@ -68,7 +70,6 @@ void CharacterSheetManager::cargarPersonajesDesdeArchivo(const QString &rutaArch
             QString linea = in.readLine();
             Cyberpunk personaje = Cyberpunk::deserializar(linea);
             personajes.append(personaje);
-            agregarPersonajeEnLista(personaje);
         }
         archivo.close();
     }
@@ -79,37 +80,15 @@ void CharacterSheetManager::agregarPersonaje(const Cyberpunk &nuevo) {
     personajes.append(nuevo);
 }
 
-void CharacterSheetManager::agregarPersonajeEnLista(const Cyberpunk nou){
-    QVBoxLayout* layout = qobject_cast<QVBoxLayout*>(ui->layoutlista->layout());
-    if (layout){
-        QPushButton* personaje = new QPushButton(nou.datos.nombre+" "+ nou.datos.rol);
-        personaje->setProperty("nombre",nou.datos.nombre);
-        personaje->setFixedHeight(30);
-        personaje->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        personaje->setStyleSheet(
-            "QPushButton{"
-                "color: lightgray;"
-                "background-color: #111111;"
-                "border: 1px solid red;"
-                "padding-left: 10px;"
-                "font-weight: bold;"
-                "text-align: left;"
-            "}"
-            "QPushButton:hover{"
-                "background-color: #000000;"
-            "}"
-        );
-        connect(personaje, &QPushButton::clicked, this, &CharacterSheetManager::abrirVentanaEditar);
-        layout->addWidget(personaje);
-        layout->setSpacing(5);
-        layout->setContentsMargins(5, 5, 5, 5);
-        layout->setAlignment(Qt::AlignTop);
+void CharacterSheetManager::crearLista(){
+    ui->listaPersonajes->clear();
+    for (const Cyberpunk& personaje : personajes) {
+        ui->listaPersonajes->addItem(personaje.datos.nombre);
     }
 }
 
-void CharacterSheetManager::abrirVentanaEditar(){
-    QPushButton *botn = qobject_cast<QPushButton*>(sender());
-    QString nombre = botn->property("nombre").toString();
+void CharacterSheetManager::abrirVentanaEditar(QListWidgetItem *item){
+    QString nombre = item->text();
     ventanaEditar *ventana = new ventanaEditar(nombre, personajes, this);
     ventana->show();
 }

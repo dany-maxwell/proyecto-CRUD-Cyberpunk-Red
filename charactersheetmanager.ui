@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>780</width>
+    <width>782</width>
     <height>468</height>
    </rect>
   </property>
@@ -251,16 +251,32 @@ font: 14pt &quot;OCR A&quot;;</string>
       <property name="styleSheet">
        <string notr="true">border: 0px solid red;</string>
       </property>
-      <widget class="QWidget" name="verticalLayoutWidget">
+      <widget class="QListWidget" name="listaPersonajes">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>371</width>
-         <height>451</height>
+         <x>8</x>
+         <y>9</y>
+         <width>361</width>
+         <height>431</height>
         </rect>
        </property>
-       <layout class="QVBoxLayout" name="layoutlista"/>
+       <property name="styleSheet">
+        <string notr="true"> QListWidget {
+          background-color: #111111;
+          border: 2px solid red;
+          padding: 10px;
+        }
+        QListWidget::item {
+          background-color: #3a3a3a;
+          color: white;
+          border-radius: 8px;
+          padding: 8px;
+          margin: 4px;
+        }
+        QListWidget::item:selected {
+          background-color: #5a5a5a;
+        }</string>
+       </property>
       </widget>
      </widget>
     </item>

@@ -90,7 +90,6 @@ void ventanaEditar::leerPersonaje(){
     }
 }
 
-
 Cyberpunk ventanaEditar::personajEditado() const{
     Cyberpunk editado;
     editado.base.inteligencia = ui->inteligenciaSpinBox->text().toInt();

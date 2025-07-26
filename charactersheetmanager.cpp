@@ -8,6 +8,7 @@
 #include <QObject>
 #include <QPushButton>
 #include <QDebug>
+#include <QMessageBox>
 
 CharacterSheetManager::CharacterSheetManager(QWidget *parent)
     : QMainWindow(parent)
@@ -30,20 +31,24 @@ void CharacterSheetManager::comprobarLista(){
         ui->LISTA->hide();
     }
     else{
-        crearLista();
         ui->LISTA->show();
     }
     this->adjustSize();
+    crearLista();
 }
 
 void CharacterSheetManager::on_Agregar_clicked()
 {
-    ventanAgregar *ventana = new ventanAgregar(this, this);
-    ventana->mainRef = this;
-    ventana->exec();
-    comprobarLista();
-}
+    ventanAgregar ventana(this, this);
 
+    if (ventana.exec() == QDialog::Accepted) {
+        Cyberpunk nuevo = ventana.personajEditado();
+        agregarPersonaje(nuevo);
+        agregarPersonajeALaLista(nuevo);
+        guardarPersonajesEnArchivo(QDir::homePath() + "/Documents/personajes.txt");
+        comprobarLista();
+    }
+}
 
 void CharacterSheetManager::on_Salir_clicked()
 {
@@ -75,11 +80,15 @@ void CharacterSheetManager::cargarPersonajesDesdeArchivo(const QString &rutaArch
     }
 }
 
-
 void CharacterSheetManager::agregarPersonaje(const Cyberpunk &nuevo) {
     personajes.append(nuevo);
 }
 
+void CharacterSheetManager::agregarPersonajeALaLista(const Cyberpunk& personaje) {
+    ui->listaPersonajes->addItem(personaje.datos.nombre);
+}
+
+//para actualizar la lista mostrada en el menú principal
 void CharacterSheetManager::crearLista(){
     ui->listaPersonajes->clear();
     for (const Cyberpunk& personaje : personajes) {

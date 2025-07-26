@@ -19,6 +19,7 @@ public:
     CharacterSheetManager(QWidget *parent = nullptr);
     ~CharacterSheetManager();
     void agregarPersonaje(const Cyberpunk &nuevo);
+    void agregarPersonajeALaLista(const Cyberpunk& personaje);
     void guardarPersonajesEnArchivo(const QString &rutaArchivo);
     void cargarPersonajesDesdeArchivo(const QString &rutaArchivo);
     void comprobarLista();

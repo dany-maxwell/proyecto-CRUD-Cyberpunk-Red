@@ -18,13 +18,21 @@ public:
     explicit ventanaEditar(const QString& nombre, QList<Cyberpunk>& listaRef, QWidget *parent = nullptr);
     CharacterSheetManager* mainRef;
     ventanAgregar* secRef;
+    Cyberpunk personajEditado() const;
     ~ventanaEditar();
+
+private slots:
+    void on_Descartar_clicked();
+    void on_Guardar_clicked();
+    void on_vidaActual_label_valueChanged(int vidaActual);
+    void rangoMaximo();
 
 private:
     Ui::ventanaEditar *ui;
     void leerPersonaje();
     QString nombre;
     QList<Cyberpunk> &lista;
+    QString rutaIcon;
 };
 
 #endif // VENTANAEDITAR_H

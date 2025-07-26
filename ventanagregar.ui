@@ -51,8 +51,8 @@ border: none;
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>786</width>
-        <height>814</height>
+        <width>782</width>
+        <height>805</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1975,26 +1975,6 @@ font-weight: bold;</string>
             <set>Qt::AlignmentFlag::AlignCenter</set>
            </property>
           </widget>
-          <widget class="QLineEdit" name="Adicc_lineedit">
-           <property name="geometry">
-            <rect>
-             <x>180</x>
-             <y>90</y>
-             <width>141</width>
-             <height>31</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="herCrit_lineedit">
-           <property name="geometry">
-            <rect>
-             <x>180</x>
-             <y>30</y>
-             <width>141</width>
-             <height>31</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLabel" name="svMuerte_label">
            <property name="geometry">
             <rect>
@@ -2051,6 +2031,44 @@ font-weight: bold;</string>
              <width>41</width>
              <height>20</height>
             </rect>
+           </property>
+          </widget>
+          <widget class="QLabel" name="herCrit_lineedit">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>30</y>
+             <width>141</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 12pt;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="Adicc_lineedit">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>90</y>
+             <width>141</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 12pt;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
          </widget>

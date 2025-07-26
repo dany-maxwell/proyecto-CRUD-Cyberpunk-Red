@@ -7,10 +7,10 @@
 #include <QVBoxLayout>
 #include <QDir>
 
-ventanAgregar::ventanAgregar(QWidget *parent, CharacterSheetManager *main)
+                    ventanAgregar::ventanAgregar(QWidget *parent, CharacterSheetManager *main)
     : QDialog(parent)
-    , ui(new Ui::ventanAgregar)
-    , mainRef(main)
+, ui(new Ui::ventanAgregar)
+, mainRef(main)
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::Window | Qt::WindowMinMaxButtonsHint | Qt::WindowCloseButtonHint);
@@ -143,20 +143,17 @@ void ventanAgregar::agregarPersonaje() {
     nuevoPersonaje.estado=condicion;
     nuevoPersonaje.arma=nou_arma1;
     nuevoPersonaje.arma2=nou_arma2;
-    nuevoPersonaje.cyberware=lcyberware;
 
-    mainRef->agregarPersonaje(nuevoPersonaje);
-    QString ruta = QDir::homePath() + "/Documents/personajes.txt";
-    mainRef->guardarPersonajesEnArchivo(ruta);
-    QString resumen = "Personaje agregado exitosamente";
-    QMessageBox::information(this, "Éxito", resumen);
+    //para extraer la ruta de la pfp elegida
+    nuevoPersonaje.rutaIcon = ui->galeriaPersonajes_comboBox
+                                  ->itemData(ui->galeriaPersonajes_comboBox->currentIndex(), Qt::UserRole).toString(); //para guardar la truta como texto
 
-    this->close();
-}
+    //para generar la ruta para poder guardarla
+    QString rutaEnArchivo = QDir::homePath() + "/Documents/personajes.txt";
 
-void ventanAgregar::on_Descartar_clicked()
-{
-    close();
+    this->nuevoPersonaje = nuevoPersonaje;
+
+    accept();
 }
 
 void ventanAgregar::actualizarAptRol(){
@@ -197,3 +194,69 @@ void ventanAgregar::on_tipo_corporalSpinBox_valueChanged(int tipoCorporal)
     ui->svMuerte_label->setText(QString::number(tipoCorporal));
 }
 
+void ventanAgregar::on_Descartar_clicked()
+{
+    close();
+}
+
+Cyberpunk ventanAgregar::personajEditado() const{
+    Cyberpunk editado;
+    editado.base.inteligencia = ui->inteligenciaSpinBox->value();
+    editado.base.destreza = ui->destrezaSpinBox->value();
+    editado.base.empatia = ui->empatia_label->text().toInt();
+    editado.base.empatiaMax = ui->empatiaMax_SpinBox->value();
+    editado.base.frialdad = ui->frialdadSpinBox->value();
+    editado.base.movimiento = ui->movilidadSpinBox->value();
+    editado.base.reflejos = ui->reflejosSpinBox->value();
+    editado.base.suerte = ui->suerteAct_label->text().toInt();
+    editado.base.suerteMax = ui->suerteMax_SpinBox->value();
+    editado.base.tecnica = ui->tecnicaSpinBox->value();
+    editado.base.tipoCorporal = ui->tipo_corporalSpinBox->value();
+    editado.base.voluntad = ui->voluntadSpinBox->value();
+
+    editado.datos.nombre = ui->nombreLineEdit->text();
+    editado.datos.rol = ui->rol_comboBox->currentText();
+    editado.datos.aptitudRol = ui->aptRol_label->text();
+    editado.datos.rango = ui->rango_label->text().toInt();
+    editado.datos.humanidad = ui->humanidad_label->text().toInt();
+    editado.datos.puntosMejora = ui->punto_label->text().toInt();
+
+    editado.estado.vidaActual = ui->vidaActual_label->text().toInt();
+    editado.estado.vidaMaxima = ui->vidaMax_label->text().toInt();
+    editado.estado.heridasCriticas = ui->herCrit_lineedit->text();
+    editado.estado.gravedadHeridas = ui->heridas_label->text().toInt();
+    editado.estado.adicciones = ui->Adicc_lineedit->text();
+    editado.estado.salvacionMuerte = ui->svMuerte_label->text().toInt();
+
+    editado.estado.armaduraCabeza = ui->Armadura1_lineEdit->text();
+    editado.estado.armaduraCuerpo = ui->Armadura2_lineEdit->text();
+    editado.estado.escudo = ui->Armadura3_lineEdit->text();
+    editado.estado.proteccionCabeza = ui->cp1_spinBox->value();
+    editado.estado.proteccionCuerpo = ui->cp2_spinBox->value();
+    editado.estado.proteccionEscudo = ui->cp3_spinBox->value();
+    editado.estado.penCabeza = ui->Armadura1pn_lineEdit->text();
+    editado.estado.penCuerpo = ui->Armadura2pn_lineEdit->text();
+    editado.estado.penEscudo = ui->Armadura3pn_lineEdit->text();
+
+    editado.arma.tipo = ui->Arma1_lineEdit->text();
+    editado.arma2.tipo = ui->Arma2_lineEdit->text();
+    editado.arma.daño = ui->Arma1d_lineEdit->text();
+    editado.arma2.daño = ui->Arma2d_lineEdit->text();
+    editado.arma.cdt = ui->cdt1_spinBox->value();
+    editado.arma2.cdt = ui->cdt2_spinBox->value();
+    editado.arma.municion = ui->munic1_spinBox->value();
+    editado.arma2.municion = ui->munic2_spinBox->value();
+    editado.arma.armaRango = ui->armaRango_spinBox->value();
+    editado.arma2.armaRango = ui->arma2Rango_spinBox->value();
+
+    editado.cyberware.cyberware1 = ui->ciber_lineEdit->text();
+    editado.cyberware.cyberware2 = ui->ciber_lineEdit_2->text();
+    editado.cyberware.cyberware3 = ui->ciber_lineEdit_3->text();
+    editado.cyberware.cyberware4 = ui->ciber_lineEdit_4->text();
+    editado.cyberware.cyberware5 = ui->ciber_lineEdit_5->text();
+
+    editado.rutaIcon = ui->galeriaPersonajes_comboBox
+                           ->itemData(ui->galeriaPersonajes_comboBox->currentIndex(), Qt::UserRole).toString();
+
+    return editado;
+}

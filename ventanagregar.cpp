@@ -62,6 +62,17 @@
     this->resize(this->size());
     connect(ui->minimizarButton, &QPushButton::clicked, this, &QWidget::showMinimized);
     connect(ui->rol_comboBox, &QComboBox::currentIndexChanged, this, &ventanAgregar::actualizarAptRol);
+
+    ui->inteligenciaSpinBox->setRange(0,10);
+    ui->destrezaSpinBox->setRange(0,10);
+    ui->voluntadSpinBox->setRange(0,10);
+    ui->empatiaMax_SpinBox->setRange(0,10);
+    ui->frialdadSpinBox->setRange(0,10);
+    ui->tecnicaSpinBox->setRange(0,10);
+    ui->tipo_corporalSpinBox->setRange(0,10);
+    ui->movilidadSpinBox->setRange(0,10);
+    ui->suerteMax_SpinBox->setRange(0,10);
+    ui->reflejosSpinBox->setRange(0,10);
 }
 
 QMap<QString, QString> RolesyAptRol = {

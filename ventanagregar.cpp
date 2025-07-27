@@ -82,8 +82,8 @@ QMap<QString, QString> RolesyAptRol = {
 
 QMap<QString, QString> ArmadurasP = {
     {"Ligera","Sin penalizador"},
-    {"Pesada","-2REF,DEX,MOVE"},
-    {"Blindada","-4REF,DEX,MOVE"}
+    {"Pesada","Menor Movimiento"},
+    {"Blindada","Menor Reflejos"}
 };
 
 ventanAgregar::~ventanAgregar()

@@ -33,8 +33,8 @@ void CharacterSheetManager::comprobarLista(){
     else{
         ui->LISTA->show();
     }
-    this->adjustSize();
     crearLista();
+    this->adjustSize();
 }
 
 void CharacterSheetManager::on_Agregar_clicked()

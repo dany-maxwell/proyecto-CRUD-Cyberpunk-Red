@@ -1940,6 +1940,11 @@ font-weight: bold;</string>
            </property>
            <item>
             <property name="text">
+             <string>Melee</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
              <string>Distancia</string>
             </property>
            </item>
@@ -1963,6 +1968,11 @@ font-weight: bold;</string>
              <height>21</height>
             </rect>
            </property>
+           <item>
+            <property name="text">
+             <string>Melee</string>
+            </property>
+           </item>
            <item>
             <property name="text">
              <string>Distancia</string>
@@ -2093,29 +2103,31 @@ font-weight: bold;</string>
             <string/>
            </property>
           </widget>
-          <zorder>Armadura3pn_lineEdit</zorder>
+          <zorder>Arma1_comboBox</zorder>
+          <zorder>Arma2_comboBox</zorder>
+          <zorder>Armadura1_comboBox</zorder>
+          <zorder>Armadura2_comboBox</zorder>
+          <zorder>Armadura3_comboBox</zorder>
+          <zorder>Armadura1pn_label</zorder>
+          <zorder>Armadura2pn_label</zorder>
+          <zorder>Armadura3pn_label</zorder>
           <zorder>ciber_lineEdit_3</zorder>
           <zorder>label_69</zorder>
           <zorder>label_70</zorder>
-          <zorder>Arma1_lineEdit</zorder>
           <zorder>label_71</zorder>
           <zorder>cdt2_spinBox</zorder>
-          <zorder>Armadura1pn_lineEdit</zorder>
           <zorder>label_72</zorder>
-          <zorder>Armadura2_lineEdit</zorder>
           <zorder>label_73</zorder>
           <zorder>label_74</zorder>
           <zorder>label_75</zorder>
           <zorder>label_76</zorder>
           <zorder>cdt1_spinBox</zorder>
           <zorder>vidaMax_label</zorder>
-          <zorder>Armadura1_lineEdit</zorder>
           <zorder>label_77</zorder>
           <zorder>label_78</zorder>
           <zorder>label_79</zorder>
           <zorder>Arma2d_lineEdit</zorder>
           <zorder>ciber_lineEdit_5</zorder>
-          <zorder>Armadura2pn_lineEdit</zorder>
           <zorder>munic2_spinBox</zorder>
           <zorder>cp1_spinBox</zorder>
           <zorder>ciber_lineEdit_2</zorder>
@@ -2123,14 +2135,12 @@ font-weight: bold;</string>
           <zorder>label_81</zorder>
           <zorder>label_82</zorder>
           <zorder>munic1_spinBox</zorder>
-          <zorder>Armadura3_lineEdit</zorder>
           <zorder>label_83</zorder>
           <zorder>cp2_spinBox</zorder>
           <zorder>Arma1d_lineEdit</zorder>
           <zorder>label_84</zorder>
           <zorder>label_85</zorder>
           <zorder>ciber_lineEdit</zorder>
-          <zorder>Arma2_lineEdit</zorder>
           <zorder>label_86</zorder>
           <zorder>cp3_spinBox</zorder>
           <zorder>label_87</zorder>

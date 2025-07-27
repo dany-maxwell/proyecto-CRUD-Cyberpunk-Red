@@ -33,8 +33,8 @@ ventanaEditar::~ventanaEditar()
 
 QMap<QString, QString> ArmadurasPE = {
     {"Ligera","Sin penalizador"},
-    {"Pesada","-2REF,DEX,MOVE"},
-    {"Blindada","-4REF,DEX,MOVE"}
+    {"Pesada","Menor Movimiento"},
+    {"Blindada","Menor Reflejos"}
 };
 
 void ventanaEditar::leerPersonaje(){

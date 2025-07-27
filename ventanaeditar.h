@@ -24,11 +24,19 @@ public:
 private slots:
     void on_Descartar_clicked();
     void on_Guardar_clicked();
-    void on_vidaActual_label_valueChanged(int vidaActual);
+    void on_humanidad_label_valueChanged(int humanidad);
     void rangoMaximo();
     void EditarArmaduraP1(int index);
     void EditarArmaduraP2(int index);
     void EditarArmaduraP3(int index);
+
+    //void on_vidaActual_label_valueChanged(int arg1);
+
+    void on_Eliminar_clicked();
+    //void eliminarPersonaje();
+
+signals:
+    void personajeEliminado(const QString &nombre);
 
 private:
     Ui::ventanaEditar *ui;

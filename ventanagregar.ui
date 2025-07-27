@@ -86,31 +86,6 @@ border: none;
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QPushButton" name="Ayuda">
-          <property name="geometry">
-           <rect>
-            <x>700</x>
-            <y>20</y>
-            <width>21</width>
-            <height>21</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton{
-	background-color: #ac4242;
-	border: 0px solid red;
-	font-weight: bold;
-	color: black;
-}
-QPushButton:hover {
-    background-color: #dd5656;
-	border: 0px solid #bd0000;
-}</string>
-          </property>
-          <property name="text">
-           <string>?</string>
-          </property>
-         </widget>
          <widget class="QLabel" name="hojaPer_label">
           <property name="geometry">
            <rect>
@@ -139,13 +114,15 @@ QPushButton:hover {
           <property name="styleSheet">
            <string notr="true">QPushButton{
 	background-color: #b4b4b4;
-	border: 4px solid red;
+	border: 3px solid red;
 	font-weight: bold;
 	color: black;
+	border-radius: 8px;
 }
 QPushButton:hover {
     background-color: #848686;
 	border: 4px solid #bd0000;
+	border-radius: 8px;
 }</string>
           </property>
           <property name="text">
@@ -164,13 +141,15 @@ QPushButton:hover {
           <property name="styleSheet">
            <string notr="true">QPushButton{
 	background-color: #b4b4b4;
-	border: 4px solid red;
+	border: 3px solid red;
 	font-weight: bold;
 	color: black;
+	border-radius: 8px;
 }
 QPushButton:hover {
     background-color: #848686;
 	border: 4px solid #bd0000;
+	border-radius: 8px;
 }</string>
           </property>
           <property name="text">
@@ -195,6 +174,12 @@ QPushButton:hover {
              <height>30</height>
             </rect>
            </property>
+           <property name="minimum">
+            <number>2</number>
+           </property>
+           <property name="maximum">
+            <number>8</number>
+           </property>
           </widget>
           <widget class="QSpinBox" name="reflejosSpinBox">
            <property name="geometry">
@@ -204,6 +189,15 @@ QPushButton:hover {
              <width>45</width>
              <height>30</height>
             </rect>
+           </property>
+           <property name="minimum">
+            <number>2</number>
+           </property>
+           <property name="maximum">
+            <number>8</number>
+           </property>
+           <property name="value">
+            <number>2</number>
            </property>
           </widget>
           <widget class="QSpinBox" name="tipo_corporalSpinBox">
@@ -215,6 +209,12 @@ QPushButton:hover {
              <height>30</height>
             </rect>
            </property>
+           <property name="minimum">
+            <number>2</number>
+           </property>
+           <property name="maximum">
+            <number>8</number>
+           </property>
           </widget>
           <widget class="QSpinBox" name="suerteMax_SpinBox">
            <property name="geometry">
@@ -225,6 +225,12 @@ QPushButton:hover {
              <height>30</height>
             </rect>
            </property>
+           <property name="minimum">
+            <number>2</number>
+           </property>
+           <property name="maximum">
+            <number>8</number>
+           </property>
           </widget>
           <widget class="QSpinBox" name="movilidadSpinBox">
            <property name="geometry">
@@ -234,6 +240,12 @@ QPushButton:hover {
              <width>45</width>
              <height>30</height>
             </rect>
+           </property>
+           <property name="minimum">
+            <number>2</number>
+           </property>
+           <property name="maximum">
+            <number>8</number>
            </property>
           </widget>
           <widget class="QLabel" name="empatia_label">
@@ -264,6 +276,12 @@ QPushButton:hover {
              <height>30</height>
             </rect>
            </property>
+           <property name="minimum">
+            <number>2</number>
+           </property>
+           <property name="maximum">
+            <number>8</number>
+           </property>
           </widget>
           <widget class="QSpinBox" name="inteligenciaSpinBox">
            <property name="geometry">
@@ -273,6 +291,12 @@ QPushButton:hover {
              <width>45</width>
              <height>30</height>
             </rect>
+           </property>
+           <property name="minimum">
+            <number>2</number>
+           </property>
+           <property name="maximum">
+            <number>8</number>
            </property>
           </widget>
           <widget class="QSpinBox" name="empatiaMax_SpinBox">
@@ -284,6 +308,12 @@ QPushButton:hover {
              <height>30</height>
             </rect>
            </property>
+           <property name="minimum">
+            <number>2</number>
+           </property>
+           <property name="maximum">
+            <number>8</number>
+           </property>
           </widget>
           <widget class="QSpinBox" name="destrezaSpinBox">
            <property name="geometry">
@@ -294,6 +324,12 @@ QPushButton:hover {
              <height>30</height>
             </rect>
            </property>
+           <property name="minimum">
+            <number>2</number>
+           </property>
+           <property name="maximum">
+            <number>8</number>
+           </property>
           </widget>
           <widget class="QSpinBox" name="frialdadSpinBox">
            <property name="geometry">
@@ -303,6 +339,15 @@ QPushButton:hover {
              <width>45</width>
              <height>30</height>
             </rect>
+           </property>
+           <property name="minimum">
+            <number>2</number>
+           </property>
+           <property name="maximum">
+            <number>8</number>
+           </property>
+           <property name="value">
+            <number>2</number>
            </property>
           </widget>
           <widget class="QLabel" name="label_49">
@@ -1393,7 +1438,7 @@ font-weight: bold;</string>
             <string/>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
           <widget class="QLabel" name="label_77">
@@ -1546,7 +1591,7 @@ font-weight: bold;</string>
             <string/>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
           <widget class="QLineEdit" name="ciber_lineEdit_2">
@@ -1911,7 +1956,7 @@ font-weight: bold;</string>
             <string/>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
           <widget class="QLabel" name="heridas_label">
@@ -1930,7 +1975,7 @@ font-weight: bold;</string>
             <string>0</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
           <widget class="QSpinBox" name="armaRango_spinBox">
@@ -2158,7 +2203,6 @@ font-weight: bold;</string>
          </widget>
          <zorder>hojaPer_label</zorder>
          <zorder>label_0</zorder>
-         <zorder>Ayuda</zorder>
          <zorder>Guardar</zorder>
          <zorder>Descartar</zorder>
          <zorder>widget_2</zorder>

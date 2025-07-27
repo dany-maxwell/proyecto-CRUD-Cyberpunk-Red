@@ -19,6 +19,8 @@ ventanaEditar::ventanaEditar(const QString& nombre, QList<Cyberpunk>& personajes
 
     connect(ui->humanidad_label, QOverload<int>::of(&QSpinBox::valueChanged), this, &ventanaEditar::rangoMaximo);
     connect(ui->suerteAct_label, QOverload<int>::of(&QSpinBox::valueChanged), this, &ventanaEditar::rangoMaximo);
+    connect(ui->vidaActual_label, QOverload<int>::of(&QSpinBox::valueChanged), this, &ventanaEditar::rangoMaximo);
+
     connect(ui->Armadura1_comboBox, &QComboBox::currentIndexChanged, this, &ventanaEditar::EditarArmaduraP1);
     connect(ui->Armadura2_comboBox, &QComboBox::currentIndexChanged, this, &ventanaEditar::EditarArmaduraP2);
     connect(ui->Armadura3_comboBox, &QComboBox::currentIndexChanged, this, &ventanaEditar::EditarArmaduraP3);
@@ -205,11 +207,10 @@ void ventanaEditar::on_Guardar_clicked()
     accept();
 }
 
-void ventanaEditar::on_vidaActual_label_valueChanged(int vidaActual)
+void ventanaEditar::on_humanidad_label_valueChanged(int humanidad)
 {
-    int empatia = vidaActual/10;
+    int empatia = humanidad/10;
     ui->empatia_label->setText(QString::number(empatia));
-    ui->vidaActual_label->setValue(vidaActual);
 }
 
 void ventanaEditar::rangoMaximo()
@@ -227,5 +228,14 @@ void ventanaEditar::rangoMaximo()
     if(suerte > rangoSuerte){
         ui->suerteAct_label->setValue(rangoSuerte);
     }
+    int vidaMax = ui->vidaMax_label->text().toInt();
+    int vidaActual = ui->vidaActual_label->value();
+    if(vidaActual > vidaMax){
+        ui->vidaActual_label->setValue(vidaMax);
+    }
 }
 
+void ventanaEditar::on_Eliminar_clicked(){
+    emit personajeEliminado(nombre);
+    this->close();
+}

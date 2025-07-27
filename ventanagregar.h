@@ -27,6 +27,9 @@ private slots:
     void agregarPersonaje();
     void on_Descartar_clicked();
     void actualizarAptRol();
+    void ActualizarArmaduraP1();
+    void ActualizarArmaduraP2();
+    void ActualizarArmaduraP3();
     void on_suerteMax_SpinBox_valueChanged(int suerteMax);
     void on_empatiaMax_SpinBox_valueChanged(int empMax);
     void on_voluntadSpinBox_valueChanged(int voluntad);

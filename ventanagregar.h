@@ -17,11 +17,11 @@ public:
     ~ventanAgregar();
     CharacterSheetManager* mainRef;
     QList<Cyberpunk> personajes;
-    Cyberpunk personajEditado() const;
+    Cyberpunk nuevoPersonaje;
+
 
 private:
     Ui::ventanAgregar *ui;
-    Cyberpunk nuevoPersonaje;
     //QList<Cyberpunk> personajes;
 private slots:
     void agregarPersonaje();

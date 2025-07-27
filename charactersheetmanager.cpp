@@ -42,7 +42,7 @@ void CharacterSheetManager::on_Agregar_clicked()
     ventanAgregar ventana(this, this);
 
     if (ventana.exec() == QDialog::Accepted) {
-        Cyberpunk nuevo = ventana.personajEditado();
+        Cyberpunk nuevo = ventana.nuevoPersonaje;
         agregarPersonaje(nuevo);
         agregarPersonajeALaLista(nuevo);
         guardarPersonajesEnArchivo(QDir::homePath() + "/Documents/personajes.txt");

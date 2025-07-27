@@ -152,7 +152,7 @@ void ventanAgregar::agregarPersonaje() {
     nuevoPersonaje.estado=condicion;
     nuevoPersonaje.arma=nou_arma1;
     nuevoPersonaje.arma2=nou_arma2;
-
+    nuevoPersonaje.cyberware=lcyberware;
     //para extraer la ruta de la pfp elegida
     nuevoPersonaje.rutaIcon = ui->galeriaPersonajes_comboBox
                                   ->itemData(ui->galeriaPersonajes_comboBox->currentIndex(), Qt::UserRole).toString(); //para guardar la truta como texto

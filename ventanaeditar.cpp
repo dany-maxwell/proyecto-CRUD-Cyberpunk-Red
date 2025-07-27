@@ -19,12 +19,23 @@ ventanaEditar::ventanaEditar(const QString& nombre, QList<Cyberpunk>& personajes
 
     connect(ui->humanidad_label, QOverload<int>::of(&QSpinBox::valueChanged), this, &ventanaEditar::rangoMaximo);
     connect(ui->suerteAct_label, QOverload<int>::of(&QSpinBox::valueChanged), this, &ventanaEditar::rangoMaximo);
+    connect(ui->vidaActual_label, QOverload<int>::of(&QSpinBox::valueChanged), this, &ventanaEditar::rangoMaximo);
+
+    connect(ui->Armadura1_comboBox, &QComboBox::currentIndexChanged, this, &ventanaEditar::EditarArmaduraP1);
+    connect(ui->Armadura2_comboBox, &QComboBox::currentIndexChanged, this, &ventanaEditar::EditarArmaduraP2);
+    connect(ui->Armadura3_comboBox, &QComboBox::currentIndexChanged, this, &ventanaEditar::EditarArmaduraP3);
 }
 
 ventanaEditar::~ventanaEditar()
 {
     delete ui;
 }
+
+QMap<QString, QString> ArmadurasPE = {
+    {"Ligera","Sin penalizador"},
+    {"Pesada","Menor Movimiento"},
+    {"Blindada","Menor Reflejos"}
+};
 
 void ventanaEditar::leerPersonaje(){
     for (const Cyberpunk& personaje : lista) {
@@ -59,8 +70,8 @@ void ventanaEditar::leerPersonaje(){
             ui->heridas_label->setValue(personaje.estado.gravedadHeridas);
             ui->Adicc_lineedit->setText(personaje.estado.adicciones);
 
-            ui->Arma1_lineEdit->setText(personaje.arma.tipo);
-            ui->Arma2_lineEdit->setText(personaje.arma2.tipo);
+            ui->Arma1_comboBox->setCurrentText(personaje.arma.tipo);
+            ui->Arma2_comboBox->setCurrentText(personaje.arma2.tipo);
             ui->Arma1d_lineEdit->setText(personaje.arma.daño);
             ui->Arma2d_lineEdit->setText(personaje.arma2.daño);
             ui->munic1_spinBox->setValue(personaje.arma.municion);
@@ -70,15 +81,15 @@ void ventanaEditar::leerPersonaje(){
             ui->armaRango_spinBox->setValue(personaje.arma.armaRango);
             ui->arma2Rango_spinBox->setValue(personaje.arma2.armaRango);
 
-            ui->Armadura1_lineEdit->setText(personaje.estado.armaduraCabeza);
-            ui->Armadura2_lineEdit->setText(personaje.estado.armaduraCuerpo);
-            ui->Armadura3_lineEdit->setText(personaje.estado.escudo);
+            ui->Armadura1_comboBox->setCurrentText(personaje.estado.armaduraCabeza);
+            ui->Armadura2_comboBox->setCurrentText(personaje.estado.armaduraCuerpo);
+            ui->Armadura3_comboBox->setCurrentText(personaje.estado.escudo);
             ui->cp1_spinBox->setValue(personaje.estado.proteccionCabeza);
             ui->cp2_spinBox->setValue(personaje.estado.proteccionCuerpo);
             ui->cp3_spinBox->setValue(personaje.estado.proteccionEscudo);
-            ui->Armadura1pn_lineEdit->setText(personaje.estado.penCabeza);
-            ui->Armadura2pn_lineEdit->setText(personaje.estado.penCuerpo);
-            ui->Armadura3pn_lineEdit->setText(personaje.estado.penEscudo);
+            ui->Armadura1pn_label->setText(personaje.estado.penCabeza);
+            ui->Armadura2pn_label->setText(personaje.estado.penCuerpo);
+            ui->Armadura3pn_label->setText(personaje.estado.penEscudo);
 
             ui->ciber_lineEdit->setText(personaje.cyberware.cyberware1);
             ui->ciber_lineEdit_2->setText(personaje.cyberware.cyberware2);
@@ -119,18 +130,18 @@ Cyberpunk ventanaEditar::personajEditado() const{
     editado.estado.adicciones = ui->Adicc_lineedit->text();
     editado.estado.salvacionMuerte = ui->svMuerte_label->text().toInt();
 
-    editado.estado.armaduraCabeza = ui->Armadura1_lineEdit->text();
-    editado.estado.armaduraCuerpo = ui->Armadura2_lineEdit->text();
-    editado.estado.escudo = ui->Armadura3_lineEdit->text();
+    editado.estado.armaduraCabeza = ui->Armadura1_comboBox->currentText();
+    editado.estado.armaduraCuerpo = ui->Armadura2_comboBox->currentText();
+    editado.estado.escudo = ui->Armadura3_comboBox->currentText();
     editado.estado.proteccionCabeza = ui->cp1_spinBox->value();
     editado.estado.proteccionCuerpo = ui->cp2_spinBox->value();
     editado.estado.proteccionEscudo = ui->cp3_spinBox->value();
-    editado.estado.penCabeza = ui->Armadura1pn_lineEdit->text();
-    editado.estado.penCuerpo = ui->Armadura2pn_lineEdit->text();
-    editado.estado.penEscudo = ui->Armadura3pn_lineEdit->text();
+    editado.estado.penCabeza = ui->Armadura1pn_label->text();
+    editado.estado.penCuerpo = ui->Armadura2pn_label->text();
+    editado.estado.penEscudo = ui->Armadura3pn_label->text();
 
-    editado.arma.tipo = ui->Arma1_lineEdit->text();
-    editado.arma2.tipo = ui->Arma2_lineEdit->text();
+    editado.arma.tipo = ui->Arma1_comboBox->currentText();
+    editado.arma2.tipo = ui->Arma2_comboBox->currentText();
     editado.arma.daño = ui->Arma1d_lineEdit->text();
     editado.arma2.daño = ui->Arma2d_lineEdit->text();
     editado.arma.cdt = ui->cdt1_spinBox->value();
@@ -149,6 +160,23 @@ Cyberpunk ventanaEditar::personajEditado() const{
     editado.rutaIcon = this->rutaIcon;
 
     return editado;
+}
+
+void ventanaEditar::EditarArmaduraP1(int index){
+    QString tipoSeleccionado = ui->Armadura1_comboBox->currentText();
+    QString penalizador = ArmadurasPE.value(tipoSeleccionado,"");
+    ui->Armadura1pn_label->setText(penalizador);
+}
+
+void ventanaEditar::EditarArmaduraP2(int index){
+    QString tipoSeleccionado = ui->Armadura2_comboBox->currentText();
+    QString penalizador = ArmadurasPE.value(tipoSeleccionado,"");
+    ui->Armadura2pn_label->setText(penalizador);
+}
+void ventanaEditar::EditarArmaduraP3(int index){
+    QString tipoSeleccionado = ui->Armadura3_comboBox->currentText();
+    QString penalizador = ArmadurasPE.value(tipoSeleccionado,"");
+    ui->Armadura3pn_label->setText(penalizador);
 }
 
 void ventanaEditar::on_Descartar_clicked()
@@ -179,11 +207,10 @@ void ventanaEditar::on_Guardar_clicked()
     accept();
 }
 
-void ventanaEditar::on_vidaActual_label_valueChanged(int vidaActual)
+void ventanaEditar::on_humanidad_label_valueChanged(int humanidad)
 {
-    int empatia = vidaActual/10;
+    int empatia = humanidad/10;
     ui->empatia_label->setText(QString::number(empatia));
-    ui->vidaActual_label->setValue(vidaActual);
 }
 
 void ventanaEditar::rangoMaximo()
@@ -201,5 +228,14 @@ void ventanaEditar::rangoMaximo()
     if(suerte > rangoSuerte){
         ui->suerteAct_label->setValue(rangoSuerte);
     }
+    int vidaMax = ui->vidaMax_label->text().toInt();
+    int vidaActual = ui->vidaActual_label->value();
+    if(vidaActual > vidaMax){
+        ui->vidaActual_label->setValue(vidaMax);
+    }
 }
 
+void ventanaEditar::on_Eliminar_clicked(){
+    emit personajeEliminado(nombre);
+    this->close();
+}

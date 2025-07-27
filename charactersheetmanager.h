@@ -20,6 +20,7 @@ public:
     ~CharacterSheetManager();
     void agregarPersonaje(const Cyberpunk &nuevo);
     void agregarPersonajeALaLista(const Cyberpunk& personaje);
+    void eliminarpersonaje(const Cyberpunk &eliminado);
     void guardarPersonajesEnArchivo(const QString &rutaArchivo);
     void cargarPersonajesDesdeArchivo(const QString &rutaArchivo);
     void comprobarLista();
@@ -29,6 +30,7 @@ private slots:
     void on_Salir_clicked();
     void abrirVentanaEditar(QListWidgetItem *item);
     void crearLista();
+
 
 private:
     Ui::CharacterSheetManager *ui;

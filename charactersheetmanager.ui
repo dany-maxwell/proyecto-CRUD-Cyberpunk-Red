@@ -70,7 +70,9 @@ border: non;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border: 3px solid red;</string>
+        <string notr="true">border-radius: 10px;
+border: 2px solid red;
+padding: 10px;</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::Shape::StyledPanel</enum>
@@ -81,10 +83,10 @@ border: non;
        <widget class="QPushButton" name="Salir">
         <property name="geometry">
          <rect>
-          <x>55</x>
-          <y>180</y>
-          <width>150</width>
-          <height>31</height>
+          <x>60</x>
+          <y>140</y>
+          <width>141</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="cursor">
@@ -93,13 +95,15 @@ border: non;
         <property name="styleSheet">
          <string notr="true">QPushButton{
 	background-color: #b4b4b4;
-	border: 4px solid red;
+	border: 3px solid red;
 	font-weight: bold;
 	color: black;
+	border-radius: 8px;
 }
 QPushButton:hover {
     background-color: #848686;
 	border: 4px solid #bd0000;
+	border-radius: 8px;
 }</string>
         </property>
         <property name="text">
@@ -109,10 +113,10 @@ QPushButton:hover {
        <widget class="QPushButton" name="Agregar">
         <property name="geometry">
          <rect>
-          <x>55</x>
-          <y>20</y>
-          <width>150</width>
-          <height>31</height>
+          <x>30</x>
+          <y>50</y>
+          <width>201</width>
+          <height>41</height>
          </rect>
         </property>
         <property name="cursor">
@@ -124,77 +128,19 @@ QPushButton:hover {
         <property name="styleSheet">
          <string notr="true">QPushButton{
 	background-color: #b4b4b4;
-	border: 4px solid red;
+	border: 3px solid red;
 	font-weight: bold;
 	color: black;
+	border-radius: 8px;
 }
 QPushButton:hover {
     background-color: #848686;
 	border: 4px solid #bd0000;
+	border-radius: 8px;
 }</string>
         </property>
         <property name="text">
-         <string>AGREGAR</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="Editar">
-        <property name="geometry">
-         <rect>
-          <x>55</x>
-          <y>60</y>
-          <width>150</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: #c0c0c0;
-border: 4px solid red;
-font-weight: bold;
-color: black;
-</string>
-        </property>
-        <property name="text">
-         <string>EDITAR</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="Revisar">
-        <property name="geometry">
-         <rect>
-          <x>55</x>
-          <y>100</y>
-          <width>150</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: #c0c0c0;
-border: 4px solid red;
-font-weight: bold;
-color: black;
-</string>
-        </property>
-        <property name="text">
-         <string>REVISAR</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="Eliminar">
-        <property name="geometry">
-         <rect>
-          <x>55</x>
-          <y>140</y>
-          <width>150</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: #c0c0c0;
-border: 4px solid red;
-font-weight: bold;
-color: black;
-</string>
-        </property>
-        <property name="text">
-         <string>ELIMINAR</string>
+         <string>CREAR PERSONAJE</string>
         </property>
        </widget>
       </widget>

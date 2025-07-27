@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>804</width>
-    <height>850</height>
+    <height>800</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -51,8 +51,8 @@ border: none;
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>782</width>
-        <height>805</height>
+        <width>786</width>
+        <height>764</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -86,31 +86,6 @@ border: none;
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QPushButton" name="Ayuda">
-          <property name="geometry">
-           <rect>
-            <x>700</x>
-            <y>20</y>
-            <width>21</width>
-            <height>21</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton{
-        background-color: #ac4242;
-        border: 0px solid red;
-        font-weight: bold;
-        color: black;
-}
-QPushButton:hover {
-    background-color: #dd5656;
-        border: 0px solid #bd0000;
-}</string>
-          </property>
-          <property name="text">
-           <string>?</string>
-          </property>
-         </widget>
          <widget class="QLabel" name="hojaPer_label">
           <property name="geometry">
            <rect>
@@ -130,22 +105,24 @@ QPushButton:hover {
          <widget class="QPushButton" name="Guardar">
           <property name="geometry">
            <rect>
-            <x>290</x>
+            <x>260</x>
             <y>10</y>
-            <width>170</width>
+            <width>141</width>
             <height>41</height>
            </rect>
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton{
-        background-color: #b4b4b4;
-        border: 4px solid red;
-        font-weight: bold;
-        color: black;
+	background-color: #b4b4b4;
+	border: 3px solid red;
+	font-weight: bold;
+	color: black;
+	border-radius: 8px;
 }
 QPushButton:hover {
     background-color: #848686;
-        border: 4px solid #bd0000;
+	border: 4px solid #bd0000;
+	border-radius: 8px;
 }</string>
           </property>
           <property name="text">
@@ -155,22 +132,24 @@ QPushButton:hover {
          <widget class="QPushButton" name="Descartar">
           <property name="geometry">
            <rect>
-            <x>500</x>
+            <x>420</x>
             <y>10</y>
-            <width>170</width>
+            <width>141</width>
             <height>41</height>
            </rect>
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton{
-        background-color: #b4b4b4;
-        border: 4px solid red;
-        font-weight: bold;
-        color: black;
+	background-color: #b4b4b4;
+	border: 3px solid red;
+	font-weight: bold;
+	color: black;
+	border-radius: 8px;
 }
 QPushButton:hover {
     background-color: #848686;
-        border: 4px solid #bd0000;
+	border: 4px solid #bd0000;
+	border-radius: 8px;
 }</string>
           </property>
           <property name="text">
@@ -1093,16 +1072,6 @@ font: 7.6pt;</string>
             <height>571</height>
            </rect>
           </property>
-          <widget class="QLineEdit" name="Armadura3pn_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>210</x>
-             <y>396</y>
-             <width>116</width>
-             <height>16</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLineEdit" name="ciber_lineEdit_3">
            <property name="geometry">
             <rect>
@@ -1178,16 +1147,6 @@ font:8.7pt;
             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
-          <widget class="QLineEdit" name="Arma1_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>9</x>
-             <y>209</y>
-             <width>91</width>
-             <height>16</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLabel" name="label_71">
            <property name="geometry">
             <rect>
@@ -1227,16 +1186,6 @@ font-weight: bold;</string>
             </rect>
            </property>
           </widget>
-          <widget class="QLineEdit" name="Armadura1pn_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>210</x>
-             <y>346</y>
-             <width>116</width>
-             <height>16</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLabel" name="label_72">
            <property name="geometry">
             <rect>
@@ -1264,16 +1213,6 @@ font-weight: bold;</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignCenter</set>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="Armadura2_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>73</x>
-             <y>371</y>
-             <width>89</width>
-             <height>16</height>
-            </rect>
            </property>
           </widget>
           <widget class="QLabel" name="label_73">
@@ -1422,17 +1361,7 @@ font-weight: bold;</string>
             <string/>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="Armadura1_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>73</x>
-             <y>346</y>
-             <width>89</width>
-             <height>16</height>
-            </rect>
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
           <widget class="QLabel" name="label_77">
@@ -1547,16 +1476,6 @@ font-weight: bold;</string>
            </property>
            <property name="styleSheet">
             <string notr="true">font: 7.5pt;</string>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="Armadura2pn_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>210</x>
-             <y>371</y>
-             <width>116</width>
-             <height>16</height>
-            </rect>
            </property>
           </widget>
           <widget class="QSpinBox" name="munic2_spinBox">
@@ -1691,16 +1610,6 @@ font-weight: bold;</string>
             </rect>
            </property>
           </widget>
-          <widget class="QLineEdit" name="Armadura3_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>73</x>
-             <y>396</y>
-             <width>89</width>
-             <height>16</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLabel" name="label_83">
            <property name="geometry">
             <rect>
@@ -1823,16 +1732,6 @@ font: 12pt;
            </property>
            <property name="styleSheet">
             <string notr="true">font: 7.5pt;</string>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="Arma2_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>9</x>
-             <y>232</y>
-             <width>91</width>
-             <height>16</height>
-            </rect>
            </property>
           </widget>
           <widget class="QLabel" name="label_86">
@@ -1974,6 +1873,9 @@ font-weight: bold;</string>
              <height>20</height>
             </rect>
            </property>
+           <property name="layoutDirection">
+            <enum>Qt::LayoutDirection::LeftToRight</enum>
+           </property>
            <property name="styleSheet">
             <string notr="true">font: 12pt;</string>
            </property>
@@ -1981,7 +1883,7 @@ font-weight: bold;</string>
             <string/>
            </property>
            <property name="alignment">
-            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
           <widget class="QSpinBox" name="armaRango_spinBox">
@@ -2013,6 +1915,9 @@ font-weight: bold;</string>
              <height>21</height>
             </rect>
            </property>
+           <property name="maximum">
+            <number>160</number>
+           </property>
           </widget>
           <widget class="QSpinBox" name="heridas_label">
            <property name="geometry">
@@ -2024,15 +1929,266 @@ font-weight: bold;</string>
             </rect>
            </property>
           </widget>
+          <widget class="QComboBox" name="Arma1_comboBox">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>210</y>
+             <width>91</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>Melee</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Distancia</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Inteligente</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tecnologica</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QComboBox" name="Arma2_comboBox">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>230</y>
+             <width>91</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>Melee</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Distancia</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Inteligente</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tecnologica</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QComboBox" name="Armadura1_comboBox">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>340</y>
+             <width>81</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>Ligera</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Pesada</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Blindada</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QComboBox" name="Armadura2_comboBox">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>370</y>
+             <width>81</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>Ligera</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Pesada</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Blindada</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QComboBox" name="Armadura3_comboBox">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>394</y>
+             <width>81</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>Ligera</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Pesada</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Blindada</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QLabel" name="Armadura1pn_label">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>345</y>
+             <width>121</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLabel" name="Armadura2pn_label">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>370</y>
+             <width>121</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLabel" name="Armadura3pn_label">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>395</y>
+             <width>121</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <zorder>Arma1_comboBox</zorder>
+          <zorder>Arma2_comboBox</zorder>
+          <zorder>Armadura1_comboBox</zorder>
+          <zorder>Armadura2_comboBox</zorder>
+          <zorder>Armadura3_comboBox</zorder>
+          <zorder>Armadura1pn_label</zorder>
+          <zorder>Armadura2pn_label</zorder>
+          <zorder>Armadura3pn_label</zorder>
+          <zorder>ciber_lineEdit_3</zorder>
+          <zorder>label_69</zorder>
+          <zorder>label_70</zorder>
+          <zorder>label_71</zorder>
+          <zorder>cdt2_spinBox</zorder>
+          <zorder>label_72</zorder>
+          <zorder>label_73</zorder>
+          <zorder>label_74</zorder>
+          <zorder>label_75</zorder>
+          <zorder>label_76</zorder>
+          <zorder>cdt1_spinBox</zorder>
+          <zorder>vidaMax_label</zorder>
+          <zorder>label_77</zorder>
+          <zorder>label_78</zorder>
+          <zorder>label_79</zorder>
+          <zorder>Arma2d_lineEdit</zorder>
+          <zorder>ciber_lineEdit_5</zorder>
+          <zorder>munic2_spinBox</zorder>
+          <zorder>cp1_spinBox</zorder>
+          <zorder>ciber_lineEdit_2</zorder>
+          <zorder>label_80</zorder>
+          <zorder>label_81</zorder>
+          <zorder>label_82</zorder>
+          <zorder>munic1_spinBox</zorder>
+          <zorder>label_83</zorder>
+          <zorder>cp2_spinBox</zorder>
+          <zorder>Arma1d_lineEdit</zorder>
+          <zorder>label_84</zorder>
+          <zorder>label_85</zorder>
+          <zorder>ciber_lineEdit</zorder>
+          <zorder>label_86</zorder>
+          <zorder>cp3_spinBox</zorder>
+          <zorder>label_87</zorder>
+          <zorder>ciber_lineEdit_4</zorder>
+          <zorder>label_88</zorder>
+          <zorder>svMuerte_label</zorder>
+          <zorder>armaRango_spinBox</zorder>
+          <zorder>arma2Rango_spinBox</zorder>
+          <zorder>vidaActual_label</zorder>
+          <zorder>heridas_label</zorder>
+          <zorder>herCrit_lineedit</zorder>
+          <zorder>Adicc_lineedit</zorder>
+         </widget>
+         <widget class="QPushButton" name="Eliminar">
+          <property name="geometry">
+           <rect>
+            <x>580</x>
+            <y>10</y>
+            <width>141</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+	background-color: #b4b4b4;
+	border: 3px solid red;
+	font-weight: bold;
+	color: black;
+	border-radius: 8px;
+}
+QPushButton:hover {
+    background-color: #848686;
+	border: 4px solid #bd0000;
+	border-radius: 8px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Eliminar</string>
+          </property>
          </widget>
          <zorder>hojaPer_label</zorder>
          <zorder>label_0</zorder>
-         <zorder>Ayuda</zorder>
          <zorder>Guardar</zorder>
          <zorder>Descartar</zorder>
          <zorder>widget_2</zorder>
          <zorder>widget_3</zorder>
          <zorder>widget_4</zorder>
+         <zorder>Eliminar</zorder>
         </widget>
        </item>
       </layout>

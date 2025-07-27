@@ -62,17 +62,9 @@
     this->resize(this->size());
     connect(ui->minimizarButton, &QPushButton::clicked, this, &QWidget::showMinimized);
     connect(ui->rol_comboBox, &QComboBox::currentIndexChanged, this, &ventanAgregar::actualizarAptRol);
-
-    ui->inteligenciaSpinBox->setRange(0,10);
-    ui->destrezaSpinBox->setRange(0,10);
-    ui->voluntadSpinBox->setRange(0,10);
-    ui->empatiaMax_SpinBox->setRange(0,10);
-    ui->frialdadSpinBox->setRange(0,10);
-    ui->tecnicaSpinBox->setRange(0,10);
-    ui->tipo_corporalSpinBox->setRange(0,10);
-    ui->movilidadSpinBox->setRange(0,10);
-    ui->suerteMax_SpinBox->setRange(0,10);
-    ui->reflejosSpinBox->setRange(0,10);
+    connect(ui->Armadura1_comboBox, &QComboBox::currentIndexChanged, this, &ventanAgregar::ActualizarArmaduraP1);
+    connect(ui->Armadura2_comboBox, &QComboBox::currentIndexChanged, this, &ventanAgregar::ActualizarArmaduraP2);
+    connect(ui->Armadura3_comboBox, &QComboBox::currentIndexChanged, this, &ventanAgregar::ActualizarArmaduraP3);
 }
 
 QMap<QString, QString> RolesyAptRol = {
@@ -86,6 +78,12 @@ QMap<QString, QString> RolesyAptRol = {
     {"Policía","Apoyo"},
     {"Fixer","Gestión"},
     {"Nómada","Motor"}
+};
+
+QMap<QString, QString> ArmadurasP = {
+    {"Ligera","Sin penalizador"},
+    {"Pesada","Menor Movimiento"},
+    {"Blindada","Menor Reflejos"}
 };
 
 ventanAgregar::~ventanAgregar()
@@ -121,23 +119,23 @@ void ventanAgregar::agregarPersonaje() {
     condicion.salvacionMuerte = ui->svMuerte_label->text().toInt();
     condicion.gravedadHeridas = ui->heridas_label->text().toInt();
     condicion.adicciones = ui->Adicc_lineedit->text();
-    condicion.armaduraCabeza = ui->Armadura1_lineEdit->text();
-    condicion.armaduraCuerpo = ui->Armadura2_lineEdit->text();
-    condicion.escudo = ui->Armadura3_lineEdit->text();
+    condicion.armaduraCabeza = ui->Armadura1_comboBox->currentText();
+    condicion.armaduraCuerpo = ui->Armadura2_comboBox->currentText();
+    condicion.escudo = ui->Armadura3_comboBox->currentText();
     condicion.proteccionCabeza = ui->cp1_spinBox->value();
     condicion.proteccionCuerpo = ui->cp2_spinBox->value();
     condicion.proteccionEscudo = ui->cp3_spinBox->value();
-    condicion.penCabeza = ui->Armadura1pn_lineEdit->text();
-    condicion.penCuerpo = ui->Armadura2pn_lineEdit->text();
-    condicion.penEscudo = ui->Armadura3pn_lineEdit->text();
+    condicion.penCabeza = ui->Armadura1pn_label->text();
+    condicion.penCuerpo = ui->Armadura2pn_label->text();
+    condicion.penEscudo = ui->Armadura3pn_label->text();
     Armas nou_arma1;
-    nou_arma1.tipo = ui->Arma1_lineEdit->text();
+    nou_arma1.tipo = ui->Arma1_comboBox->currentText();
     nou_arma1.daño = ui->Arma1d_lineEdit->text();
     nou_arma1.municion = ui->munic1_spinBox->value();
     nou_arma1.cdt = ui->cdt1_spinBox->value();
     nou_arma1.armaRango = ui->armaRango_spinBox->value();
     Armas nou_arma2;
-    nou_arma2.tipo = ui->Arma2_lineEdit->text();
+    nou_arma2.tipo = ui->Arma2_comboBox->currentText();
     nou_arma2.daño = ui->Arma2d_lineEdit->text();
     nou_arma2.municion = ui->munic2_spinBox->value();
     nou_arma2.cdt = ui->cdt2_spinBox->value();
@@ -165,6 +163,22 @@ void ventanAgregar::agregarPersonaje() {
     this->nuevoPersonaje = nuevoPersonaje;
 
     accept();
+}
+void ventanAgregar::ActualizarArmaduraP1(){
+    QString tipoSeleccionado = ui->Armadura1_comboBox->currentText();
+    QString penalizador = ArmadurasP.value(tipoSeleccionado,"");
+    ui->Armadura1pn_label->setText(penalizador);
+}
+
+void ventanAgregar::ActualizarArmaduraP2(){
+    QString tipoSeleccionado = ui->Armadura2_comboBox->currentText();
+    QString penalizador = ArmadurasP.value(tipoSeleccionado,"");
+    ui->Armadura2pn_label->setText(penalizador);
+}
+void ventanAgregar::ActualizarArmaduraP3(){
+    QString tipoSeleccionado = ui->Armadura3_comboBox->currentText();
+    QString penalizador = ArmadurasP.value(tipoSeleccionado,"");
+    ui->Armadura3pn_label->setText(penalizador);
 }
 
 void ventanAgregar::actualizarAptRol(){

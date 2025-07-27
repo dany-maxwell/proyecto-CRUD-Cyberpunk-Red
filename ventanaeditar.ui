@@ -1072,16 +1072,6 @@ font: 7.6pt;</string>
             <height>571</height>
            </rect>
           </property>
-          <widget class="QLineEdit" name="Armadura3pn_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>210</x>
-             <y>396</y>
-             <width>116</width>
-             <height>16</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLineEdit" name="ciber_lineEdit_3">
            <property name="geometry">
             <rect>
@@ -1157,16 +1147,6 @@ font:8.7pt;
             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
-          <widget class="QLineEdit" name="Arma1_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>9</x>
-             <y>209</y>
-             <width>91</width>
-             <height>16</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLabel" name="label_71">
            <property name="geometry">
             <rect>
@@ -1206,16 +1186,6 @@ font-weight: bold;</string>
             </rect>
            </property>
           </widget>
-          <widget class="QLineEdit" name="Armadura1pn_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>210</x>
-             <y>346</y>
-             <width>116</width>
-             <height>16</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLabel" name="label_72">
            <property name="geometry">
             <rect>
@@ -1243,16 +1213,6 @@ font-weight: bold;</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignmentFlag::AlignCenter</set>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="Armadura2_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>73</x>
-             <y>371</y>
-             <width>89</width>
-             <height>16</height>
-            </rect>
            </property>
           </widget>
           <widget class="QLabel" name="label_73">
@@ -1404,16 +1364,6 @@ font-weight: bold;</string>
             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
           </widget>
-          <widget class="QLineEdit" name="Armadura1_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>73</x>
-             <y>346</y>
-             <width>89</width>
-             <height>16</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLabel" name="label_77">
            <property name="geometry">
             <rect>
@@ -1526,16 +1476,6 @@ font-weight: bold;</string>
            </property>
            <property name="styleSheet">
             <string notr="true">font: 7.5pt;</string>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="Armadura2pn_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>210</x>
-             <y>371</y>
-             <width>116</width>
-             <height>16</height>
-            </rect>
            </property>
           </widget>
           <widget class="QSpinBox" name="munic2_spinBox">
@@ -1670,16 +1610,6 @@ font-weight: bold;</string>
             </rect>
            </property>
           </widget>
-          <widget class="QLineEdit" name="Armadura3_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>73</x>
-             <y>396</y>
-             <width>89</width>
-             <height>16</height>
-            </rect>
-           </property>
-          </widget>
           <widget class="QLabel" name="label_83">
            <property name="geometry">
             <rect>
@@ -1802,16 +1732,6 @@ font: 12pt;
            </property>
            <property name="styleSheet">
             <string notr="true">font: 7.5pt;</string>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="Arma2_lineEdit">
-           <property name="geometry">
-            <rect>
-             <x>9</x>
-             <y>232</y>
-             <width>91</width>
-             <height>16</height>
-            </rect>
            </property>
           </widget>
           <widget class="QLabel" name="label_86">
@@ -2007,6 +1927,170 @@ font-weight: bold;</string>
              <width>61</width>
              <height>21</height>
             </rect>
+           </property>
+          </widget>
+          <widget class="QComboBox" name="Arma1_comboBox">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>210</y>
+             <width>91</width>
+             <height>16</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>Distancia</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Inteligente</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tecnologica</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QComboBox" name="Arma2_comboBox">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>230</y>
+             <width>91</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>Distancia</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Inteligente</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tecnologica</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QComboBox" name="Armadura1_comboBox">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>340</y>
+             <width>81</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>Ligera</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Pesada</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Blindada</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QComboBox" name="Armadura2_comboBox">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>370</y>
+             <width>81</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>Ligera</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Pesada</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Blindada</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QComboBox" name="Armadura3_comboBox">
+           <property name="geometry">
+            <rect>
+             <x>80</x>
+             <y>394</y>
+             <width>81</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string>Ligera</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Pesada</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Blindada</string>
+            </property>
+           </item>
+          </widget>
+          <widget class="QLabel" name="Armadura1pn_label">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>345</y>
+             <width>121</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLabel" name="Armadura2pn_label">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>370</y>
+             <width>121</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLabel" name="Armadura3pn_label">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>395</y>
+             <width>121</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
            </property>
           </widget>
           <zorder>Armadura3pn_lineEdit</zorder>

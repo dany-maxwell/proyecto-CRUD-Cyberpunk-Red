@@ -26,6 +26,9 @@ private slots:
     void on_Guardar_clicked();
     void on_vidaActual_label_valueChanged(int vidaActual);
     void rangoMaximo();
+    void EditarArmaduraP1(int index);
+    void EditarArmaduraP2(int index);
+    void EditarArmaduraP3(int index);
 
 private:
     Ui::ventanaEditar *ui;

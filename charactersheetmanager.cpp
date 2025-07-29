@@ -44,7 +44,6 @@ void CharacterSheetManager::on_Agregar_clicked()
     if (ventana.exec() == QDialog::Accepted) {
         Cyberpunk nuevo = ventana.nuevoPersonaje;
         agregarPersonaje(nuevo);
-        agregarPersonajeALaLista(nuevo);
         guardarPersonajesEnArchivo(QDir::homePath() + "/Documents/personajes.txt");
         comprobarLista();
     }
@@ -82,10 +81,6 @@ void CharacterSheetManager::cargarPersonajesDesdeArchivo(const QString &rutaArch
 
 void CharacterSheetManager::agregarPersonaje(const Cyberpunk &nuevo) {
     personajes.append(nuevo);
-}
-
-void CharacterSheetManager::agregarPersonajeALaLista(const Cyberpunk& personaje) {
-    ui->listaPersonajes->addItem(personaje.datos.nombre);
 }
 
 //para actualizar la lista mostrada en el menú principal
